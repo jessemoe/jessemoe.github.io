@@ -1,0 +1,421 @@
+.v.wrap {
+  animation: none;
+  opacity: 0;
+}
+.v .vsys,
+.v .vtime,
+.v .status-bar {
+  color: var(--grey-5);
+}
+.v .text-right {
+  text-align: right;
+}
+.v .text-center {
+  text-align: center;
+}
+.v .pd5 {
+  padding: 0.3125rem;
+}
+.v .pd10 {
+  padding: 0.625rem;
+}
+.v img {
+  max-width: 100%;
+  border: none;
+}
+.v hr {
+  margin: 0.825em 0;
+}
+.v.hide-avatar .vimg {
+  display: none;
+}
+.v a {
+  position: relative;
+  cursor: pointer;
+  color: var(--color-aqua);
+  text-decoration: none;
+  display: inline-block;
+}
+.v a:hover {
+  color: var(--primary-color);
+}
+.v pre {
+  padding: 0.625rem;
+  overflow: auto;
+  line-height: 1.45;
+}
+.v pre code {
+  font-size: 1em;
+  background: transparent;
+}
+.v blockquote {
+  padding: 0 0 0 1em;
+  border-left: 0.25rem solid var(--grey-3);
+}
+.v .vinput {
+  border: none;
+  resize: none;
+  outline: none;
+  padding: 0.625rem 0.3125rem;
+  max-width: 100%;
+  font-size: 0.75em;
+}
+.v input[type=checkbox],
+.v input[type=radio] {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -0.125rem;
+}
+.v .clear {
+  content: "";
+  display: block;
+  clear: both;
+}
+.v .vicon {
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  fill: var(--text-color);
+  vertical-align: middle;
+}
+.v .vicon+.vicon {
+  margin-left: 0.625rem;
+}
+.v .vicon.actived {
+  fill: var(--color-blue);
+}
+.v .vrow {
+  padding: 0.625rem 0;
+}
+.v .vrow .vcol {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0.875em;
+}
+.v .vrow .vcol.vcol-20 {
+  width: 20%;
+}
+.v .vrow .vcol.vcol-30 {
+  width: 30%;
+}
+.v .vrow .vcol.vcol-40 {
+  width: 40%;
+}
+.v .vrow .vcol.vcol-50 {
+  width: 50%;
+}
+.v .vrow .vcol.vcol-60 {
+  width: 60%;
+}
+.v .vrow .vcol.vcol-70 {
+  width: 70%;
+}
+.v .vrow .vcol.vcol-80 {
+  width: 80%;
+}
+.v .vrow .vcol.status-bar {
+  font-size: 0.75em;
+}
+.v .vrow .vcol.status-bar.warning {
+  color: var(--color-orange);
+}
+.v .emoji,
+.v .vemoji {
+  max-width: 1.5625rem;
+  vertical-align: middle;
+  margin: 0 0.0625rem;
+  display: inline-block;
+}
+.v .vwrap {
+  border-radius: 0.5rem;
+  border: 0.0625rem solid var(--grey-2);
+  box-shadow: 0 0.625rem 1.875rem -0.9375rem var(--box-bg-shadow);
+  margin-bottom: 0.625rem;
+  overflow: hidden;
+  position: relative;
+  padding: 0.625rem;
+}
+.v .vwrap input {
+  background: transparent;
+}
+.v .vwrap .vedit {
+  position: relative;
+  padding-top: 0.625rem;
+}
+.v .vwrap .cancel-reply-btn {
+  position: absolute;
+  right: 0.3125rem;
+  top: 0.3125rem;
+  cursor: pointer;
+}
+.v .vwrap .vemojis {
+  display: none;
+  font-size: 1.125rem;
+  max-height: 9.0625rem;
+  overflow: auto;
+  padding-bottom: 0.625rem;
+  box-shadow: 0 0 0.0625rem var(--grey-9-a1);
+}
+.v .vwrap .vemojis i {
+  font-style: normal;
+  padding-top: 0.4375rem;
+  width: 2.25rem;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+}
+.v .vwrap .vpreview {
+  padding: 0.4375rem 1.25rem;
+  border-radius: 0.5rem;
+  border: 0.0625rem solid var(--grey-2);
+  box-shadow: 0 0.625rem 1.875rem -0.9375rem var(--box-bg-shadow);
+}
+.v .vwrap .vheader .vinput {
+  width: 33.33%;
+  border-bottom: 0.0625rem dashed var(--grey-4);
+}
+.v .vwrap .vheader .vinput:focus {
+  border-bottom-color: var(--primary-color);
+}
+.v .vwrap .vheader.item2 .vinput {
+  width: 50%;
+}
+.v .vwrap .vheader.item1 .vinput {
+  width: 100%;
+}
+.vcount {
+  padding: 0.3125rem;
+  font-weight: 600;
+  font-size: 1.25em;
+}
+.veditor {
+  width: 100%;
+  min-height: 8.75em;
+  font-size: 0.875em;
+  background: transparent;
+  resize: vertical;
+  transition: all 0.25s ease;
+}
+.vempty {
+  padding: 1.25em;
+  text-align: center;
+  overflow: auto;
+}
+.vsys {
+  display: inline-block;
+  padding: 0.2em 0.5em;
+  font-size: 0.75em;
+  border-radius: 0.2em;
+  margin-right: 0.3em;
+}
+.vcards {
+  width: 100%;
+}
+.vcards .vcard {
+  padding-top: 1.25em;
+  position: relative;
+  display: block;
+}
+.vcards .vcard::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.vcards .vcard .vimg {
+  width: 3.125em;
+  height: 3.125em;
+  float: left;
+  border-radius: 50%;
+  margin-right: 0.7525em;
+  border: 0.0625rem solid var(--grey-3);
+  padding: 0.125em;
+}
+.vcards .vcard:hover > .vimg {
+  animation: 0.8s ease-out 0s 1 normal both running shake;
+}
+.vcards .vcard .vhead {
+  line-height: 1.5;
+  margin-top: 0;
+}
+.vcards .vcard .vhead .vnick {
+  position: relative;
+  font-size: 0.875em;
+  font-weight: 500;
+  margin-right: 0.875em;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+.vcards .vcard .vhead .vnick:hover {
+  color: var(--primary-color);
+}
+.vcards .vcard .vtag {
+  font-size: 0.75rem;
+  display: inline-block;
+  line-height: 1.25rem;
+  border-radius: 0.125rem;
+  color: var(--grey-1);
+  padding: 0 0.3125rem;
+  position: inherit;
+}
+.vcards .vcard .vtag.vmaster {
+  background: var(--color-orange);
+}
+.vcards .vcard .vh {
+  overflow: hidden;
+  padding-bottom: 0.5em;
+  border-bottom: 0.0625rem dashed var(--grey-3);
+}
+.vcards .vcard .vh .vtime {
+  font-size: 0.75em;
+  margin-right: 0.875em;
+}
+.vcards .vcard .vh .vmeta {
+  line-height: 1;
+  position: relative;
+}
+.vcards .vcard .vh .vmeta .vat {
+  font-size: 0.8125em;
+  color: var(--primary-color);
+  cursor: pointer;
+  float: right;
+  transition: all 0.2s ease-in-out 0s;
+}
+.vcards .vcard .vh .vmeta .vat:hover {
+  color: var(--color-aqua);
+}
+.vcards .vcard:last-child .vh {
+  border-bottom: none;
+}
+.vcards .vcard .vcontent {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-all;
+  font-size: 0.875em;
+  line-height: 2;
+  position: relative;
+  margin-bottom: 0.75em;
+  padding: 0.625em;
+}
+.vcards .vcard .vcontent.expand {
+  cursor: pointer;
+  max-height: 8em;
+  overflow: hidden;
+}
+.vcards .vcard .vcontent.expand::before {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 3.15em;
+  background: linear-gradient(180deg, var(--grey-1-a0), var(--grey-1));
+  z-index: 999;
+}
+.vcards .vcard .vcontent.expand::after {
+  display: block;
+  content: attr(data-expand);
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 3.15em;
+  line-height: 3.15em;
+  left: 0;
+  bottom: 0;
+  z-index: 999;
+  background: var(--grey-1);
+}
+.vcards .vcard .vquote {
+  padding-left: 1em;
+  border-left: 0.0625rem dashed var(--grey-3);
+}
+.vcards .vcard .vquote .vimg {
+  width: 2.225em;
+  height: 2.225em;
+}
+.vpage .vmore {
+  margin: 1em 0;
+}
+@media screen and (max-width: 51.25rem) {
+  .v .vwrap .vheader.item2 .vinput,
+  .v .vwrap .vheader .vinput {
+    width: 100%;
+  }
+  .v .vsys {
+    display: none;
+  }
+}
+@media screen and (max-width: 71.25rem) {
+  .v .vcards .vcard .vimg {
+    width: 2.5em;
+    height: 2.5em;
+  }
+}
+.v .vspinner {
+  width: 1.375rem;
+  height: 1.375rem;
+  display: inline-block;
+  border: 0.375rem double #a0a0a0;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  -webkit-animation: spin 1s infinite linear;
+  animation: spin 1s infinite linear;
+  position: relative;
+  vertical-align: middle;
+  margin: 0 0.3125rem;
+}
+@-moz-keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+@-o-keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+@-moz-keyframes pulse {
+  50% {
+    background: #dcdcdc;
+  }
+}
+@-webkit-keyframes pulse {
+  50% {
+    background: #dcdcdc;
+  }
+}
+@-o-keyframes pulse {
+  50% {
+    background: #dcdcdc;
+  }
+}
+@keyframes pulse {
+  50% {
+    background: #dcdcdc;
+  }
+}
