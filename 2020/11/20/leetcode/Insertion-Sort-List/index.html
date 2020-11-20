@@ -24,19 +24,19 @@
 <link rel="stylesheet" href="/css/app.css?v=0.1.9">
 
   
-  <meta name="keywords" content="leetcode,sort" />
+  <meta name="keywords" content="leetcode,Linklist" />
 
 
 
 <meta name="description" content="" >
 
 
-<link rel="canonical" href="http://csger.xyz/2020/11/17/leetcode/Matrix-Cells-in-Distance-Order/">
+<link rel="canonical" href="http://csger.xyz/2020/11/20/leetcode/Insertion-Sort-List/">
 
 
 
   <title>
-Matrix Cells in Distance Order - leetcode |
+Insertion Sort List |
 csger site = Blog</title>
 <meta name="generator" content="Hexo 5.2.0"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -64,16 +64,16 @@ csger site = Blog</title>
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">Matrix Cells in Distance Order
+  <h1 itemprop="name headline">Insertion Sort List
   </h1>
   
 <div class="meta">
-  <span class="item" title="Created: 2020-11-17 12:59:23">
+  <span class="item" title="Created: 2020-11-20 22:01:51">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
     <span class="text">Posted on</span>
-    <time itemprop="dateCreated datePublished" datetime="2020-11-17T12:59:23+08:00">2020-11-17</time>
+    <time itemprop="dateCreated datePublished" datetime="2020-11-20T22:01:51+08:00">2020-11-20</time>
   </span>
 </div>
 
@@ -106,12 +106,12 @@ csger site = Blog</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclh5u05ej20zk0m87df.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giciuv0socj20zk0m8qes.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giph4wqtg4j20zk0m8x6p.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipetv6p75j20zk0m8x6p.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipexoj0moj20zk0m8kgu.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclg5ms2rj20zk0m8u0x.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipevuctzzj20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipeuibk9fj20zk0m8ay2.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipetfk5zwj20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipex2cdtbj20zk0m8x6p.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giciundwu5j20zk0m8n9e.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicli9lfebj20zk0m84qp.jpg"></li>
         </ul>
       </div>
     </header>
@@ -136,13 +136,11 @@ csger site = Blog</title>
     
 <div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
 <i class="ic i-home"></i>
-<span><a href="/">Home</a></span><i class="ic i-angle-right"></i>
-<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/leetcode/" itemprop="item" rel="index" title="In leetcode"><span itemprop="name">leetcode</span></a>
-<meta itemprop="position" content="1" /></span>
+<span><a href="/">Home</a></span>
 </div>
 
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
-  <link itemprop="mainEntityOfPage" href="http://csger.xyz/2020/11/17/leetcode/Matrix-Cells-in-Distance-Order/">
+  <link itemprop="mainEntityOfPage" href="http://csger.xyz/2020/11/20/leetcode/Insertion-Sort-List/">
 
   <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="image" content="/images/avatar.jpg">
@@ -157,13 +155,13 @@ csger site = Blog</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p><img data-src="https://tva3.sinaimg.cn/large/787a8ef1ly1gks30l0kq2j20gb0ce74x.jpg" alt="Alt text"></p>
-<h2 id="Submission"><a href="#Submission" class="headerlink" title="Submission"></a>Submission</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">allCellsDistOrder</span><span class="params">(<span class="keyword">int</span> R, <span class="keyword">int</span> C, <span class="keyword">int</span> r0, <span class="keyword">int</span> c0)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; ans;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;R;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;C;j++)&#123;</span><br><span class="line">                ans.push_back(&#123;i,j&#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        sort(ans.begin(),ans.end(),[=](<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; a,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; b)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">abs</span>(a[<span class="number">0</span>]-r0)+<span class="built_in">abs</span>(a[<span class="number">1</span>]-c0) &lt; <span class="built_in">abs</span>(b[<span class="number">0</span>]-r0)+<span class="built_in">abs</span>(b[<span class="number">1</span>]-c0);</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+    <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p><img data-src="https://tva4.sinaimg.cn/large/787a8ef1ly1gkvzjyzbtyj20gb0d674t.jpg" alt="Alt text"></p>
+<h2 id="Submission"><a href="#Submission" class="headerlink" title="Submission"></a>Submission</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">insertionSortList</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(head == <span class="literal">nullptr</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode* node = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">        node-&gt;next = head;</span><br><span class="line">        ListNode* pre = head;</span><br><span class="line">        ListNode* cur = head-&gt;next;</span><br><span class="line">        <span class="keyword">while</span>(cur != <span class="literal">nullptr</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(cur-&gt;val &gt;= pre-&gt;val)&#123;</span><br><span class="line">                pre = pre-&gt;next;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                ListNode* prev = node;</span><br><span class="line">                <span class="keyword">while</span>(prev-&gt;next-&gt;val &lt;= cur-&gt;val)&#123;</span><br><span class="line">                    prev = prev-&gt;next;</span><br><span class="line">                &#125;</span><br><span class="line">                pre-&gt;next = cur-&gt;next;</span><br><span class="line">                cur-&gt;next = prev-&gt;next;</span><br><span class="line">                prev-&gt;next = cur;</span><br><span class="line">            &#125;</span><br><span class="line">            cur = pre-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> node-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
       <div class="tags">
           <a href="/tags/leetcode/" rel="tag"><i class="ic i-tag"></i> leetcode</a>
-          <a href="/tags/sort/" rel="tag"><i class="ic i-tag"></i> sort</a>
+          <a href="/tags/Linklist/" rel="tag"><i class="ic i-tag"></i> Linklist</a>
       </div>
   </div>
 
@@ -175,7 +173,7 @@ csger site = Blog</title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2020-11-17 13:02:03" itemprop="dateModified" datetime="2020-11-17T13:02:03+08:00">2020-11-17</time>
+    <time title="Modified: 2020-11-20 22:04:03" itemprop="dateModified" datetime="2020-11-20T22:04:03+08:00">2020-11-20</time>
   </span>
 </div>
 
@@ -211,7 +209,7 @@ csger site = Blog</title>
   </li>
   <li class="link">
     <strong>Post link: </strong>
-    <a href="http://csger.xyz/2020/11/17/leetcode/Matrix-Cells-in-Distance-Order/" title="Matrix Cells in Distance Order">http://csger.xyz/2020/11/17/leetcode/Matrix-Cells-in-Distance-Order/</a>
+    <a href="http://csger.xyz/2020/11/20/leetcode/Insertion-Sort-List/" title="Insertion Sort List">http://csger.xyz/2020/11/20/leetcode/Insertion-Sort-List/</a>
   </li>
   <li class="license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
@@ -230,27 +228,19 @@ csger site = Blog</title>
     <div class="item left">
       
 
-  <a href="/2020/11/16/leetcode/Queue-Reconstruction-by-Height/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicivghyooj20zk0m8dir.jpg" title="Queue Reconstruction by Height">
+  <a href="/2020/11/18/leetcode/The-Longest-substring-without-repeat-char/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipewf5l51j20zk0m8b29.jpg" title="The Longest substring without repeat char">
   <span class="type">Previous Post</span>
-  <span class="category"><i class="ic i-flag"></i> leetcode</span>
-  <h3>Queue Reconstruction by Height</h3>
-  </a>
-
-    </div>
-    <div class="item right">
-      
-
-  <a href="/2020/11/18/leetcode/The-Longest-substring-without-repeat-char/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipet4bz0yj20zk0m8e81.jpg" title="The Longest substring without repeat char">
-  <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> leetcode</span>
   <h3>The Longest substring without repeat char</h3>
   </a>
 
     </div>
+    <div class="item right">
+    </div>
 </div>
 
   
-  <div class="wrap" id="comments" data-id="2020/11/17/leetcode/Matrix-Cells-in-Distance-Order/"></div>
+  <div class="wrap" id="comments" data-id="2020/11/20/leetcode/Insertion-Sort-List/"></div>
 
 
         </div>
@@ -265,9 +255,6 @@ csger site = Blog</title>
           <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-number">1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Submission"><span class="toc-number">2.</span> <span class="toc-text">Submission</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
-        <ul>
-          <li><a href="/2020/10/01/leetcode/Autumn-leaves-collection/" rel="bookmark" title="Autumn leaves collection">Autumn leaves collection</a></li><li><a href="/2020/09/30/leetcode/Deep-dark-fraction/" rel="bookmark" title="Deep dark fraction">Deep dark fraction</a></li><li><a href="/2020/11/11/leetcode/Freedom-Trail/" rel="bookmark" title="Freedom Trail">Freedom Trail</a></li><li><a href="/2020/10/25/leetcode/Longest-Mountain-in-Array/" rel="bookmark" title="Longest MOuntain in Array">Longest MOuntain in Array</a></li><li class="active"><a href="/2020/11/17/leetcode/Matrix-Cells-in-Distance-Order/" rel="bookmark" title="Matrix Cells in Distance Order">Matrix Cells in Distance Order</a></li><li><a href="/2020/11/10/leetcode/Next-Permutation/" rel="bookmark" title="Next Permutation">Next Permutation</a></li><li><a href="/2020/11/13/leetcode/Odd-Even-Link-list/" rel="bookmark" title="Odd Even Link list">Odd Even Link list</a></li><li><a href="/2020/10/22/leetcode/Partation-Labels/" rel="bookmark" title="Partation Labels">Partation Labels</a></li><li><a href="/2020/10/11/leetcode/Partition-equal-subset-sum/" rel="bookmark" title="Partition equal subset sum">Partition equal subset sum</a></li><li><a href="/2020/11/16/leetcode/Queue-Reconstruction-by-Height/" rel="bookmark" title="Queue Reconstruction by Height">Queue Reconstruction by Height</a></li><li><a href="/2020/11/14/leetcode/Relative-Sort-Array/" rel="bookmark" title="Relative Sort Array">Relative Sort Array</a></li><li><a href="/2020/11/15/leetcode/Remove-K-Digits/" rel="bookmark" title="Remove K Digits">Remove K Digits</a></li><li><a href="/2020/11/06/leetcode/Sort-Integers-by-the-number-of-1-bit/" rel="bookmark" title="Sort Integers by the number of 1 bit">Sort Integers by the number of 1 bit</a></li><li><a href="/2020/11/18/leetcode/The-Longest-substring-without-repeat-char/" rel="bookmark" title="The Longest substring without repeat char">The Longest substring without repeat char</a></li><li><a href="/2020/10/24/leetcode/Video-Stitching/" rel="bookmark" title="Video Stitching">Video Stitching</a></li>
-        </ul>
       </div>
       <div class="overview panel" data-title="Overview">
         <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -344,12 +331,10 @@ csger site = Blog</title>
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/2020/11/16/leetcode/Queue-Reconstruction-by-Height/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/2020/11/18/leetcode/The-Longest-substring-without-repeat-char/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -371,70 +356,10 @@ csger site = Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/couresra-notes/" title="In couresra-notes">couresra-notes</a>
-</div>
-
-    <span><a href="/2020/11/03/couresra-notes/Object-oriented-design-Review4/" title="Object-oriented design Review3">Object-oriented design Review3</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/categories/leetcode/" title="In leetcode">leetcode</a>
 </div>
 
-    <span><a href="/2020/11/10/leetcode/Next-Permutation/" title="Next Permutation">Next Permutation</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/life/" title="In life">life</a>
-</div>
-
-    <span><a href="/2020/09/25/life/hello-world/" title="Hello World">Hello World</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/couresra-notes/" title="In couresra-notes">couresra-notes</a>
-</div>
-
-    <span><a href="/2020/10/02/couresra-notes/object-oriented-design-notes/" title="object-oriented design notes">object-oriented design notes</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/leetcode/" title="In leetcode">leetcode</a>
-</div>
-
-    <span><a href="/2020/11/18/leetcode/The-Longest-substring-without-repeat-char/" title="The Longest substring without repeat char">The Longest substring without repeat char</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/life/" title="In life">life</a>
-</div>
-
-    <span><a href="/2020/09/29/life/resume/" title="resume">resume</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/couresra-notes/" title="In couresra-notes">couresra-notes</a>
-</div>
-
-    <span><a href="/2020/10/26/couresra-notes/Object-oriented-design-Review-3/" title="Object-oriented design Review 3">Object-oriented design Review 3</a></span>
+    <span><a href="/2020/10/24/leetcode/Video-Stitching/" title="Video Stitching">Video Stitching</a></span>
   </li>
 
       
@@ -454,7 +379,17 @@ csger site = Blog</title>
 <a href="/categories/leetcode/" title="In leetcode">leetcode</a>
 </div>
 
-    <span><a href="/2020/11/13/leetcode/Odd-Even-Link-list/" title="Odd Even Link list">Odd Even Link list</a></span>
+    <span><a href="/2020/11/18/leetcode/The-Longest-substring-without-repeat-char/" title="The Longest substring without repeat char">The Longest substring without repeat char</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/couresra-notes/" title="In couresra-notes">couresra-notes</a>
+</div>
+
+    <span><a href="/2020/10/04/couresra-notes/object-oriented-design-2/" title="object-oriented design 2">object-oriented design 2</a></span>
   </li>
 
       
@@ -464,7 +399,56 @@ csger site = Blog</title>
 <a href="/categories/leetcode/" title="In leetcode">leetcode</a>
 </div>
 
-    <span><a href="/2020/10/24/leetcode/Video-Stitching/" title="Video Stitching">Video Stitching</a></span>
+    <span><a href="/2020/11/06/leetcode/Sort-Integers-by-the-number-of-1-bit/" title="Sort Integers by the number of 1 bit">Sort Integers by the number of 1 bit</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/leetcode/" title="In leetcode">leetcode</a>
+</div>
+
+    <span><a href="/2020/11/15/leetcode/Remove-K-Digits/" title="Remove K Digits">Remove K Digits</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/leetcode/" title="In leetcode">leetcode</a>
+</div>
+
+    <span><a href="/2020/11/10/leetcode/Next-Permutation/" title="Next Permutation">Next Permutation</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/couresra-notes/" title="In couresra-notes">couresra-notes</a>
+</div>
+
+    <span><a href="/2020/11/03/couresra-notes/Object-oriented-design-Review4/" title="Object-oriented design Review3">Object-oriented design Review3</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2020/11/20/leetcode/Insertion-Sort-List/" title="Insertion Sort List">Insertion Sort List</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/life/" title="In life">life</a>
+</div>
+
+    <span><a href="/2020/09/25/life/hello-world/" title="Hello World">Hello World</a></span>
   </li>
 
   </ul>
@@ -494,7 +478,7 @@ csger site = Blog</title>
   </div>
 <script data-config type="text/javascript">
   var LOCAL = {
-    path: 'http://csger.xyz/2020/11/17/leetcode/Matrix-Cells-in-Distance-Order/',
+    path: 'http://csger.xyz/2020/11/20/leetcode/Insertion-Sort-List/',
     favicon: {
       show: "（●´3｀●）",
       hide: "(´Д｀)"
