@@ -24,19 +24,19 @@
 <link rel="stylesheet" href="/css/app.css?v=0.1.9">
 
   
-  <meta name="keywords" content="coursera,software" />
+  <meta name="keywords" content="leetcode,LinkList" />
 
 
 
 <meta name="description" content="" >
 
 
-<link rel="canonical" href="http://csger.xyz/2020/10/04/couresra-notes/object-oriented-design-2/">
+<link rel="canonical" href="http://csger.xyz/2020/12/08/leetcode/Convert-Sorted-List-to-Binary-Search-Tree/">
 
 
 
   <title>
-object-oriented design 2 - couresra-notes |
+Convert Sorted List to Binary Search Tree |
 csger site = Blog</title>
 <meta name="generator" content="Hexo 5.2.0"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -64,16 +64,16 @@ csger site = Blog</title>
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">object-oriented design 2
+  <h1 itemprop="name headline">Convert Sorted List to Binary Search Tree
   </h1>
   
 <div class="meta">
-  <span class="item" title="Created: 2020-10-04 15:25:56">
+  <span class="item" title="Created: 2020-12-08 22:27:05">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
     <span class="text">Posted on</span>
-    <time itemprop="dateCreated datePublished" datetime="2020-10-04T15:25:56+08:00">2020-10-04</time>
+    <time itemprop="dateCreated datePublished" datetime="2020-12-08T22:27:05+08:00">2020-12-08</time>
   </span>
 </div>
 
@@ -106,12 +106,12 @@ csger site = Blog</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipey84bjtj20zk0m8hdt.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giciuv0socj20zk0m8qes.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicmnywqgpj20zk0m8dwx.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipew28b65j20zk0m8hdt.jpg"></li>
           <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclfb3vzhj20zk0m8wny.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giph4fomxoj20zk0m8axp.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicm07ih54j20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipesx5fdwj20zk0m81kx.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipexj2jgzj20zk0m8b09.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giciszlczyj20zk0m816d.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclgi503lj20zk0m8hdt.jpg"></li>
         </ul>
       </div>
     </header>
@@ -136,13 +136,11 @@ csger site = Blog</title>
     
 <div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
 <i class="ic i-home"></i>
-<span><a href="/">Home</a></span><i class="ic i-angle-right"></i>
-<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/couresra-notes/" itemprop="item" rel="index" title="In couresra-notes"><span itemprop="name">couresra-notes</span></a>
-<meta itemprop="position" content="1" /></span>
+<span><a href="/">Home</a></span>
 </div>
 
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
-  <link itemprop="mainEntityOfPage" href="http://csger.xyz/2020/10/04/couresra-notes/object-oriented-design-2/">
+  <link itemprop="mainEntityOfPage" href="http://csger.xyz/2020/12/08/leetcode/Convert-Sorted-List-to-Binary-Search-Tree/">
 
   <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="image" content="/images/avatar.jpg">
@@ -157,60 +155,15 @@ csger site = Blog</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <ul>
-<li><ol>
-<li>Some of the earliest computing languages supported:<br>main program and subroutines</li>
-</ol>
-</li>
-<li><ol start="2">
-<li>What are some advantages of object-oriented programming in a language like Java?<br>abstract data types<br>mimic the real world structure of the problem<br>data management</li>
-</ol>
-</li>
-<li><ol start="3">
-<li>Sam was asked to create a DeliveryDriver class. Sam thought about the problem, and reduced it to its most essential aspects… things like takeOrder, DeliveryArea, etc. She ignored things that were not important in the context, like the driver’s height or eye colour. She just applied an important object-oriented design principle. Which of these concepts best describes what she just did?<br>abstraction</li>
-</ol>
-</li>
-<li><ol start="4">
-<li>Sam identified the important attributes and behaviours of a delivery driver and put them all into a DeliveryDriver class, like “takeOrder”, “deliverOrder”, and “DeliveryArea.” She exposed some of these to other classes. She just demonstrated an important part of object-oriented design. Which of these concepts best describes what you did?<br>encapsulation</li>
-</ol>
-</li>
-<li><ol start="5">
-<li>Sam decided that the DeliveryDriver class was getting too complex, so she split it up, moving its behaviour into several related classes, like DeliveryCar and DeliveryOrder. She just demonstrated which important object-oriented design principle?<br>decomposition</li>
-</ol>
-</li>
-<li><ol start="6">
-<li>Sam realized that her DeliveryDriver class had some behaviour and attributes that could be shared by other classes, like BusDriver and TaxiDriver, so she made a class called Driver that these classes inherited behaviour from. Which object-oriented design principle did she use?<br>generalization</li>
-</ol>
-</li>
-<li><ol start="7">
-<li>Which keywords allow your classes to achieve polymorphism in Java?<br>implements<br><del>inherits</del><br>extends</li>
-</ol>
-</li>
-<li><ol start="8">
-<li>Which is the proper way to show inheritance in a UML class diagram? Choose one of the four options below: <img data-src="https://tva3.sinaimg.cn/large/787a8ef1ly1gjdcjl7hhkj21hc0u074p.jpg" alt="Alt text"><br><del>d</del><br>c</li>
-</ol>
-</li>
-<li><ol start="9">
-<li>Which is the proper way to show an abstract method in a UML class diagram?<br><del>#anOperation</del><br><del>abstract anOperation</del><br>anOperation()</li>
-</ol>
-</li>
-<li><ol start="10">
-<li>Which UML class diagram is a good example of encapsulation? Choose one of the four options below: <img data-src="https://tvax1.sinaimg.cn/large/787a8ef1ly1gjdcoqk2qxj20m80iot9q.jpg" alt="Alt text"><br><del>c</del><br>b</li>
-</ol>
-</li>
-<li><ol start="11">
-<li>Add the necessary keyword to complete this instance variable declaration in a class if you are using the encapsulation design principle to hide this variable from all other classes:<br>private</li>
-</ol>
-</li>
-<li><ol start="12">
-<li>There are three different relationships that objects can have. Which of these best describes the relationship between a Chair and its Legs?<br>composition</li>
-</ol>
-</li>
-</ul>
+    <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given the head of a singly linked list where elements are sorted in ascending order, convert it to a height balanced BST.</p>
+<p>For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.</p>
+<p><img data-src="https://tva3.sinaimg.cn/large/787a8ef1ly1glgtg4s8maj20k40fm40k.jpg" alt="image"></p>
+<h2 id="Submission"><a href="#Submission" class="headerlink" title="Submission"></a>Submission</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, val=0, next=None):</span></span><br><span class="line"><span class="comment">#         self.val = val</span></span><br><span class="line"><span class="comment">#         self.next = next</span></span><br><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, val=0, left=None, right=None):</span></span><br><span class="line"><span class="comment">#         self.val = val</span></span><br><span class="line"><span class="comment">#         self.left = left</span></span><br><span class="line"><span class="comment">#         self.right = right</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sortedListToBST</span>(<span class="params">self, head: ListNode</span>) -&gt; TreeNode:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> head:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> head.next:</span><br><span class="line">            <span class="keyword">return</span> TreeNode(head.val)</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">findMid</span>(<span class="params">head</span>):</span></span><br><span class="line">            slow = fast = head</span><br><span class="line">            prev = <span class="literal">None</span></span><br><span class="line">            <span class="keyword">while</span> fast <span class="keyword">and</span> fast.next:</span><br><span class="line">                prev = slow</span><br><span class="line">                slow = slow.next</span><br><span class="line">                fast = fast.next.next</span><br><span class="line">            prev.next = <span class="literal">None</span></span><br><span class="line">            <span class="keyword">return</span> slow</span><br><span class="line">        mid = findMid(head)</span><br><span class="line">        root = TreeNode(mid.val)</span><br><span class="line">        root.left = self.sortedListToBST(head)</span><br><span class="line">        root.right = self.sortedListToBST(mid.next)</span><br><span class="line">        <span class="keyword">return</span> root</span><br></pre></td></tr></table></figure>
+
 
       <div class="tags">
-          <a href="/tags/coursera/" rel="tag"><i class="ic i-tag"></i> coursera</a>
-          <a href="/tags/software/" rel="tag"><i class="ic i-tag"></i> software</a>
+          <a href="/tags/leetcode/" rel="tag"><i class="ic i-tag"></i> leetcode</a>
+          <a href="/tags/LinkList/" rel="tag"><i class="ic i-tag"></i> LinkList</a>
       </div>
   </div>
 
@@ -222,7 +175,7 @@ csger site = Blog</title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2020-10-04 16:05:23" itemprop="dateModified" datetime="2020-10-04T16:05:23+08:00">2020-10-04</time>
+    <time title="Modified: 2020-12-08 22:30:43" itemprop="dateModified" datetime="2020-12-08T22:30:43+08:00">2020-12-08</time>
   </span>
 </div>
 
@@ -258,7 +211,7 @@ csger site = Blog</title>
   </li>
   <li class="link">
     <strong>Post link: </strong>
-    <a href="http://csger.xyz/2020/10/04/couresra-notes/object-oriented-design-2/" title="object-oriented design 2">http://csger.xyz/2020/10/04/couresra-notes/object-oriented-design-2/</a>
+    <a href="http://csger.xyz/2020/12/08/leetcode/Convert-Sorted-List-to-Binary-Search-Tree/" title="Convert Sorted List to Binary Search Tree">http://csger.xyz/2020/12/08/leetcode/Convert-Sorted-List-to-Binary-Search-Tree/</a>
   </li>
   <li class="license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
@@ -277,27 +230,19 @@ csger site = Blog</title>
     <div class="item left">
       
 
-  <a href="/2020/10/02/couresra-notes/object-oriented-design-notes/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicivghyooj20zk0m8dir.jpg" title="object-oriented design notes">
+  <a href="/2020/12/08/leetcode/Split-Array-into-Fibonacci-sequence/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipexe4oykj20zk0m87ji.jpg" title="Split Array into Fibonacci sequence">
   <span class="type">Previous Post</span>
-  <span class="category"><i class="ic i-flag"></i> couresra-notes</span>
-  <h3>object-oriented design notes</h3>
+  <span class="category"><i class="ic i-flag"></i> leetcode</span>
+  <h3>Split Array into Fibonacci sequence</h3>
   </a>
 
     </div>
     <div class="item right">
-      
-
-  <a href="/2020/10/11/leetcode/Partition-equal-subset-sum/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicliwyw55j20zk0m8hdt.jpg" title="Partition equal subset sum">
-  <span class="type">Next Post</span>
-  <span class="category"><i class="ic i-flag"></i> leetcode</span>
-  <h3>Partition equal subset sum</h3>
-  </a>
-
     </div>
 </div>
 
   
-  <div class="wrap" id="comments" data-id="2020/10/04/couresra-notes/object-oriented-design-2/"></div>
+  <div class="wrap" id="comments" data-id="2020/12/08/leetcode/Convert-Sorted-List-to-Binary-Search-Tree/"></div>
 
 
         </div>
@@ -309,11 +254,9 @@ csger site = Blog</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-number">1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Submission"><span class="toc-number">2.</span> <span class="toc-text">Submission</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
-        <ul>
-          <li><a href="/2020/10/26/couresra-notes/Object-oriented-design-Review-3/" rel="bookmark" title="Object-oriented design Review 3">Object-oriented design Review 3</a></li><li><a href="/2020/11/03/couresra-notes/Object-oriented-design-Review4/" rel="bookmark" title="Object-oriented design Review3">Object-oriented design Review3</a></li><li class="active"><a href="/2020/10/04/couresra-notes/object-oriented-design-2/" rel="bookmark" title="object-oriented design 2">object-oriented design 2</a></li><li><a href="/2020/10/02/couresra-notes/object-oriented-design-notes/" rel="bookmark" title="object-oriented design notes">object-oriented design notes</a></li>
-        </ul>
       </div>
       <div class="overview panel" data-title="Overview">
         <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -390,12 +333,10 @@ csger site = Blog</title>
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/2020/10/02/couresra-notes/object-oriented-design-notes/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/2020/10/11/leetcode/Partition-equal-subset-sum/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -420,97 +361,97 @@ csger site = Blog</title>
 <a href="/categories/leetcode/" title="In leetcode">leetcode</a>
 </div>
 
-    <span><a href="/2020/12/06/leetcode/Pascal-s-triangle/" title="Pascal&#39;s triangle">Pascal's triangle</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/leetcode/" title="In leetcode">leetcode</a>
-</div>
-
-    <span><a href="/2020/11/21/leetcode/Sort-List/" title="Sort List">Sort List</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/leetcode/" title="In leetcode">leetcode</a>
-</div>
-
-    <span><a href="/2020/11/23/leetcode/Minimum-Number-of-Arrows-to-Burst-Balloons/" title="Minimum Number of Arrows to Burst Balloons">Minimum Number of Arrows to Burst Balloons</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/database/" title="In database">database</a>
-</div>
-
-    <span><a href="/2020/11/27/database/Department-Highest-Salary/" title="Department Highest Salary">Department Highest Salary</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/leetcode/" title="In leetcode">leetcode</a>
-</div>
-
-    <span><a href="/2020/11/18/leetcode/The-Longest-substring-without-repeat-char/" title="The Longest substring without repeat char">The Longest substring without repeat char</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/leetcode/" title="In leetcode">leetcode</a>
-</div>
-
-    <span><a href="/2020/11/17/leetcode/Matrix-Cells-in-Distance-Order/" title="Matrix Cells in Distance Order">Matrix Cells in Distance Order</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/leetcode/" title="In leetcode">leetcode</a>
-</div>
-
-    <span><a href="/2020/11/28/leetcode/Reverse-Pairs/" title="Reverse Pairs">Reverse Pairs</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/leetcode/" title="In leetcode">leetcode</a>
-</div>
-
-    <span><a href="/2020/10/11/leetcode/Partition-equal-subset-sum/" title="Partition equal subset sum">Partition equal subset sum</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/database/" title="In database">database</a>
-</div>
-
-    <span><a href="/2020/11/30/database/Duplicate-Emails/" title="Duplicate Emails">Duplicate Emails</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/leetcode/" title="In leetcode">leetcode</a>
-</div>
-
     <span><a href="/2020/10/01/leetcode/Autumn-leaves-collection/" title="Autumn leaves collection">Autumn leaves collection</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/database/" title="In database">database</a>
+</div>
+
+    <span><a href="/2020/11/27/database/Consecutive-Numbers/" title="Consecutive Numbers">Consecutive Numbers</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/leetcode/" title="In leetcode">leetcode</a>
+</div>
+
+    <span><a href="/2020/11/22/leetcode/Trapping-Rain-Water/" title="Trapping Rain Water">Trapping Rain Water</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/leetcode/" title="In leetcode">leetcode</a>
+</div>
+
+    <span><a href="/2020/12/08/leetcode/Split-Array-into-Fibonacci-sequence/" title="Split Array into Fibonacci sequence">Split Array into Fibonacci sequence</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/life/" title="In life">life</a>
+</div>
+
+    <span><a href="/2020/11/25/life/Recommend-a-todo-manager/" title="Recommend a todo manager">Recommend a todo manager</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/leetcode/" title="In leetcode">leetcode</a>
+</div>
+
+    <span><a href="/2020/11/20/leetcode/Longest-valid-Parentheses/" title="Longest valid Parentheses">Longest valid Parentheses</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/leetcode/" title="In leetcode">leetcode</a>
+</div>
+
+    <span><a href="/2020/10/22/leetcode/Partation-Labels/" title="Partation Labels">Partation Labels</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/leetcode/" title="In leetcode">leetcode</a>
+</div>
+
+    <span><a href="/2020/12/04/leetcode/Count-Triplets-That-can-form-two-arrays-of-equal-XOR/" title="Untitled">Untitled</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/life/" title="In life">life</a>
+</div>
+
+    <span><a href="/2020/09/25/life/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/leetcode/" title="In leetcode">leetcode</a>
+</div>
+
+    <span><a href="/2020/09/30/leetcode/Deep-dark-fraction/" title="Deep dark fraction">Deep dark fraction</a></span>
   </li>
 
   </ul>
@@ -540,7 +481,7 @@ csger site = Blog</title>
   </div>
 <script data-config type="text/javascript">
   var LOCAL = {
-    path: 'http://csger.xyz/2020/10/04/couresra-notes/object-oriented-design-2/',
+    path: 'http://csger.xyz/2020/12/08/leetcode/Convert-Sorted-List-to-Binary-Search-Tree/',
     favicon: {
       show: "（●´3｀●）",
       hide: "(´Д｀)"
