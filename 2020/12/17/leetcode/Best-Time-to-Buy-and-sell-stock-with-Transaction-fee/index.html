@@ -24,16 +24,20 @@
 <link rel="stylesheet" href="/css/app.css?v=0.1.9">
 
   
+  <meta name="keywords" content="leetcode,dynamic programming" />
+
 
 
 <meta name="description" content="" >
 
 
-<link rel="canonical" href="http://csger.xyz/tags/kmp/">
+<link rel="canonical" href="http://csger.xyz/2020/12/17/leetcode/Best-Time-to-Buy-and-sell-stock-with-Transaction-fee/">
 
 
 
-  <title>Tag: kmp | csger site = Blog</title>
+  <title>
+Best Time to Buy and sell stock with Transaction fee |
+csger site = Blog</title>
 <meta name="generator" content="Hexo 5.2.0"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
   <div id="loading">
@@ -60,9 +64,19 @@
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">
-    Posted with tag "kmp"
+  <h1 itemprop="name headline">Best Time to Buy and sell stock with Transaction fee
   </h1>
+  
+<div class="meta">
+  <span class="item" title="Created: 2020-12-17 13:01:01">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">Posted on</span>
+    <time itemprop="dateCreated datePublished" datetime="2020-12-17T13:01:01+08:00">2020-12-17</time>
+  </span>
+</div>
+
 
           </div>
         </div>
@@ -92,12 +106,12 @@
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipevarprfj20zk0m8npd.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipew28b65j20zk0m8hdt.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipewkhf1zj20zk0m81kx.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclx6phq6j20zk0m8e36.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicljitigmj20zk0m87fp.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclg5ms2rj20zk0m8u0x.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicitcxhpij20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclga70tsj20zk0m84mr.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicitspjpbj20zk0m81ky.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipevgoki5j20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giph47e9vtj20zk0m8x6l.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipetlbztpj20zk0m84qp.jpg"></li>
         </ul>
       </div>
     </header>
@@ -118,44 +132,127 @@
       <div class="inner">
         <div id="content" class="pjax">
           
-  <div class="collapse wrap">
-    <h2 class="item header">
-      <a href="/tags">All</a>
-      <small>/</small>
-      kmp
-      <small>Tag</small>
-    </h2>
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">Home</a></span>
+</div>
 
-        <article class="item normal" itemscope itemtype="http://schema.org/Article">
-          <div class="meta">
-            <time itemprop="dateCreated"
-                  datetime="2020-12-12T18:46:24+08:00"
-                  content="2020-12-12">
-              2020-12-12
-            </time>
-                <span><a href="/categories/leetcode/">leetcode</a></span>
-          </div>
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
+  <link itemprop="mainEntityOfPage" href="http://csger.xyz/2020/12/17/leetcode/Best-Time-to-Buy-and-sell-stock-with-Transaction-fee/">
 
-          <div class="title">
-              <a href="/2020/12/12/leetcode/Repeated-Substring-Pattern/" itemprop="url">
-                <span itemprop="name">Repeated Substring Pattern</span>
-              </a>
-          </div>
-        </article>
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="csger">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Blog">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p><img data-src="https://tvax2.sinaimg.cn/large/787a8ef1ly1glqrn5qeyej20gd0ddmxt.jpg" alt="image"></p>
+<h2 id="Submission"><a href="#Submission" class="headerlink" title="Submission"></a>Submission</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices, <span class="keyword">int</span> fee)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = prices.size();</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">dp</span><span class="params">(n,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(<span class="number">2</span>))</span></span>;</span><br><span class="line">        dp[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">0</span>,dp[<span class="number">0</span>][<span class="number">1</span>] = -prices[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">            dp[i][<span class="number">0</span>] = max(dp[i<span class="number">-1</span>][<span class="number">0</span>],dp[i<span class="number">-1</span>][<span class="number">1</span>]+prices[i]-fee);</span><br><span class="line">            dp[i][<span class="number">1</span>] = max(dp[i<span class="number">-1</span>][<span class="number">1</span>],dp[i<span class="number">-1</span>][<span class="number">0</span>]-prices[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[n<span class="number">-1</span>][<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+      <div class="tags">
+          <a href="/tags/leetcode/" rel="tag"><i class="ic i-tag"></i> leetcode</a>
+          <a href="/tags/dynamic-programming/" rel="tag"><i class="ic i-tag"></i> dynamic programming</a>
+      </div>
   </div>
 
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">Edited on</span>
+    <time title="Modified: 2020-12-17 13:02:16" itemprop="dateModified" datetime="2020-12-17T13:02:16+08:00">2020-12-17</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> Donate</button>
+  <p>give me a cup of coffee</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="csger WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.png" alt="csger Alipay">
+        <p>Alipay</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/paypal.png" alt="csger PayPal">
+        <p>PayPal</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>Post author:  </strong>csger <i class="ic i-at"><em>@</em></i>Blog
+  </li>
+  <li class="link">
+    <strong>Post link: </strong>
+    <a href="http://csger.xyz/2020/12/17/leetcode/Best-Time-to-Buy-and-sell-stock-with-Transaction-fee/" title="Best Time to Buy and sell stock with Transaction fee">http://csger.xyz/2020/12/17/leetcode/Best-Time-to-Buy-and-sell-stock-with-Transaction-fee/</a>
+  </li>
+  <li class="license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
   
 
+<div class="nav">
+    <div class="item left">
+      
+
+  <a href="/2020/12/15/leetcode/Maximum-Non-Negative-Product-in-a-Matrix/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipevarprfj20zk0m8npd.jpg" title="Maximum Non Negative Product in a Matrix">
+  <span class="type">Previous Post</span>
+  <span class="category"><i class="ic i-flag"></i> leetcode</span>
+  <h3>Maximum Non Negative Product in a Matrix</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments" data-id="2020/12/17/leetcode/Best-Time-to-Buy-and-sell-stock-with-Transaction-fee/"></div>
 
 
         </div>
         <div id="sidebar">
           
+
 <div class="inner">
 
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-number">1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Submission"><span class="toc-number">2.</span> <span class="toc-text">Submission</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
       </div>
@@ -243,6 +340,7 @@
   </ul>
 </div>
 
+
         </div>
         <div class="dimmer"></div>
       </div>
@@ -258,9 +356,10 @@
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/categories/leetcode/" title="In leetcode">leetcode</a>
 </div>
 
-    <span><a href="/2020/12/17/leetcode/Best-Time-to-Buy-and-sell-stock-with-Transaction-fee/" title="Best Time to Buy and sell stock with Transaction fee">Best Time to Buy and sell stock with Transaction fee</a></span>
+    <span><a href="/2020/10/22/leetcode/Partation-Labels/" title="Partation Labels">Partation Labels</a></span>
   </li>
 
       
@@ -277,10 +376,30 @@
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/categories/devops/" title="In devops">devops</a>
+</div>
+
+    <span><a href="/2020/09/30/devops/test-my-site/" title="test my site">test my site</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/categories/leetcode/" title="In leetcode">leetcode</a>
 </div>
 
-    <span><a href="/2020/11/23/leetcode/Minimum-Number-of-Arrows-to-Burst-Balloons/" title="Minimum Number of Arrows to Burst Balloons">Minimum Number of Arrows to Burst Balloons</a></span>
+    <span><a href="/2020/12/04/leetcode/Count-Triplets-That-can-form-two-arrays-of-equal-XOR/" title="Untitled">Untitled</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/leetcode/" title="In leetcode">leetcode</a>
+</div>
+
+    <span><a href="/2020/11/30/leetcode/Reorganize-String/" title="Reorganize String">Reorganize String</a></span>
   </li>
 
       
@@ -300,37 +419,7 @@
 <a href="/categories/leetcode/" title="In leetcode">leetcode</a>
 </div>
 
-    <span><a href="/2020/11/21/leetcode/Wildcard-Matching/" title="Wildcard Matching">Wildcard Matching</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/leetcode/" title="In leetcode">leetcode</a>
-</div>
-
-    <span><a href="/2020/11/27/leetcode/4Sum-II/" title="4Sum II">4Sum II</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/leetcode/" title="In leetcode">leetcode</a>
-</div>
-
-    <span><a href="/2020/12/07/leetcode/Reverse-Linked-List-II/" title="Reverse Linked List II">Reverse Linked List II</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/devops/" title="In devops">devops</a>
-</div>
-
-    <span><a href="/2020/09/30/devops/test-my-site/" title="test my site">test my site</a></span>
+    <span><a href="/2020/12/05/leetcode/Convert-a-Number-to-Hexadecimal/" title="Convert a Number to Hexadecimal">Convert a Number to Hexadecimal</a></span>
   </li>
 
       
@@ -350,7 +439,17 @@
 <a href="/categories/leetcode/" title="In leetcode">leetcode</a>
 </div>
 
-    <span><a href="/2020/12/08/leetcode/Split-Array-into-Fibonacci-sequence/" title="Split Array into Fibonacci sequence">Split Array into Fibonacci sequence</a></span>
+    <span><a href="/2020/12/05/leetcode/Maximum-Sum-Obtained-of-Any-permutation/" title="Maximum Sum Obtained of Any permutation">Maximum Sum Obtained of Any permutation</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/leetcode/" title="In leetcode">leetcode</a>
+</div>
+
+    <span><a href="/2020/12/05/leetcode/Task-Scheduler/" title="Task Scheduler">Task Scheduler</a></span>
   </li>
 
   </ul>
@@ -380,7 +479,7 @@
   </div>
 <script data-config type="text/javascript">
   var LOCAL = {
-    path: 'http://csger.xyz/tags/kmp/',
+    path: 'http://csger.xyz/2020/12/17/leetcode/Best-Time-to-Buy-and-sell-stock-with-Transaction-fee/',
     favicon: {
       show: "（●´3｀●）",
       hide: "(´Д｀)"
@@ -389,7 +488,8 @@
       placeholder: "Search for Posts",
       empty: "We didn't find any results for the search: ${query}",
       stats: "${hits} results found in ${time} ms"
-    },copyright: 'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',
+    },
+    valine: true,copyright: 'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',
     ignores : [
       function(uri) {
         return uri.includes('#');
