@@ -24,19 +24,19 @@
 <link rel="stylesheet" href="/css/app.css?v=0.1.9">
 
   
-  <meta name="keywords" content="mysql,leetcdoe" />
+  <meta name="keywords" content="leetcode,LinkList" />
 
 
 
 <meta name="description" content="" >
 
 
-<link rel="canonical" href="http://csger.xyz/2020/11/30/database/Duplicate-Emails/">
+<link rel="canonical" href="http://csger.xyz/2020/12/17/leetcode/Partition-List-LCCI/">
 
 
 
   <title>
-Duplicate Emails - database |
+Partition List LCCI |
 csger site = Blog</title>
 <meta name="generator" content="Hexo 5.2.0"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -64,16 +64,16 @@ csger site = Blog</title>
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">Duplicate Emails
+  <h1 itemprop="name headline">Partition List LCCI
   </h1>
   
 <div class="meta">
-  <span class="item" title="Created: 2020-11-30 23:36:17">
+  <span class="item" title="Created: 2020-12-17 23:21:12">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
     <span class="text">Posted on</span>
-    <time itemprop="dateCreated datePublished" datetime="2020-11-30T23:36:17+08:00">2020-11-30</time>
+    <time itemprop="dateCreated datePublished" datetime="2020-12-17T23:21:12+08:00">2020-12-17</time>
   </span>
 </div>
 
@@ -106,12 +106,12 @@ csger site = Blog</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipevo9j1jj20zk0m8e81.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclxxcb6rj20zk0m8b29.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicis3attqj20zk0m8k7l.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicm0fdw5cj20zk0m8hdt.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclwuom7cj20zk0m8dvn.jpg"></li>
-          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicit4jrvuj20zk0m8785.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gicli3sbvtj20zk0m8x6p.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipeudstjqj20zk0m8k3r.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1gipexw3o58j20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclg5ms2rj20zk0m8u0x.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giclhtuo6nj20zk0m8ttm.jpg"></li>
+          <li class="item" data-background-image="https://tva1.sinaimg.cn/large/6833939bly1giciundwu5j20zk0m8n9e.jpg"></li>
         </ul>
       </div>
     </header>
@@ -136,13 +136,11 @@ csger site = Blog</title>
     
 <div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
 <i class="ic i-home"></i>
-<span><a href="/">Home</a></span><i class="ic i-angle-right"></i>
-<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/database/" itemprop="item" rel="index" title="In database"><span itemprop="name">database</span></a>
-<meta itemprop="position" content="1" /></span>
+<span><a href="/">Home</a></span>
 </div>
 
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
-  <link itemprop="mainEntityOfPage" href="http://csger.xyz/2020/11/30/database/Duplicate-Emails/">
+  <link itemprop="mainEntityOfPage" href="http://csger.xyz/2020/12/17/leetcode/Partition-List-LCCI/">
 
   <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="image" content="/images/avatar.jpg">
@@ -157,13 +155,13 @@ csger site = Blog</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p><img data-src="https://tvax1.sinaimg.cn/large/787a8ef1ly1gl8qd2gukuj20gm0baweo.jpg" alt="Alt text"></p>
-<h2 id="Submission"><a href="#Submission" class="headerlink" title="Submission"></a>Submission</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line">select Email from </span><br><span class="line">(</span><br><span class="line">    select Email,count(Email) as num</span><br><span class="line">    from Person</span><br><span class="line">    group by Email</span><br><span class="line">) as statistic</span><br><span class="line">where num &gt; 1;</span><br></pre></td></tr></table></figure>
+    <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p><img data-src="https://tva4.sinaimg.cn/large/787a8ef1gy1glr9l4ogd6j20gh05maa9.jpg" alt="image"></p>
+<h2 id="Submission"><a href="#Submission" class="headerlink" title="Submission"></a>Submission</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * public class ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) &#123; val = x; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">partition</span><span class="params">(ListNode head, <span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(head == <span class="keyword">null</span> || head.next == <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode leftone = <span class="keyword">new</span> ListNode(-<span class="number">1</span>);</span><br><span class="line">        ListNode left = leftone;</span><br><span class="line">        ListNode rightone = <span class="keyword">new</span> ListNode(-<span class="number">1</span>);</span><br><span class="line">        ListNode right = rightone;</span><br><span class="line">        ListNode next;</span><br><span class="line">        <span class="keyword">while</span>(head != <span class="keyword">null</span>)&#123;</span><br><span class="line">            next = head.next;</span><br><span class="line">            <span class="keyword">if</span>(head.val &lt; x)&#123;</span><br><span class="line">                left.next = head;</span><br><span class="line">                left = left.next;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                right.next = head;</span><br><span class="line">                right = right.next;</span><br><span class="line">            &#125;</span><br><span class="line">            head.next = <span class="keyword">null</span>;</span><br><span class="line">            head = next;</span><br><span class="line">        &#125;</span><br><span class="line">        left.next = rightone.next;</span><br><span class="line">        <span class="keyword">return</span> leftone.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
       <div class="tags">
-          <a href="/tags/mysql/" rel="tag"><i class="ic i-tag"></i> mysql</a>
-          <a href="/tags/leetcdoe/" rel="tag"><i class="ic i-tag"></i> leetcdoe</a>
+          <a href="/tags/leetcode/" rel="tag"><i class="ic i-tag"></i> leetcode</a>
+          <a href="/tags/LinkList/" rel="tag"><i class="ic i-tag"></i> LinkList</a>
       </div>
   </div>
 
@@ -175,7 +173,7 @@ csger site = Blog</title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2020-12-01 22:37:58" itemprop="dateModified" datetime="2020-12-01T22:37:58+08:00">2020-12-01</time>
+    <time title="Modified: 2020-12-17 23:23:18" itemprop="dateModified" datetime="2020-12-17T23:23:18+08:00">2020-12-17</time>
   </span>
 </div>
 
@@ -211,7 +209,7 @@ csger site = Blog</title>
   </li>
   <li class="link">
     <strong>Post link: </strong>
-    <a href="http://csger.xyz/2020/11/30/database/Duplicate-Emails/" title="Duplicate Emails">http://csger.xyz/2020/11/30/database/Duplicate-Emails/</a>
+    <a href="http://csger.xyz/2020/12/17/leetcode/Partition-List-LCCI/" title="Partition List LCCI">http://csger.xyz/2020/12/17/leetcode/Partition-List-LCCI/</a>
   </li>
   <li class="license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
@@ -230,27 +228,19 @@ csger site = Blog</title>
     <div class="item left">
       
 
-  <a href="/2020/11/30/leetcode/Minimize-Deviation-in-Array/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giciszlczyj20zk0m816d.jpg" title="Minimize Deviation in Array">
+  <a href="/2020/12/17/leetcode/Best-Time-to-Buy-and-sell-stock-with-Transaction-fee/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclhfehz7j20zk0m8u0x.jpg" title="Best Time to Buy and sell stock with Transaction fee">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> leetcode</span>
-  <h3>Minimize Deviation in Array</h3>
+  <h3>Best Time to Buy and sell stock with Transaction fee</h3>
   </a>
 
     </div>
     <div class="item right">
-      
-
-  <a href="/2020/12/01/leetcode/Minimum-Number-of-Removals-to-Make-Mountain-Array/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipetv6p75j20zk0m8x6p.jpg" title="Minimum Number of Removals to Make Mountain Array">
-  <span class="type">Next Post</span>
-  <span class="category"><i class="ic i-flag"></i> leetcode</span>
-  <h3>Minimum Number of Removals to Make Mountain Array</h3>
-  </a>
-
     </div>
 </div>
 
   
-  <div class="wrap" id="comments" data-id="2020/11/30/database/Duplicate-Emails/"></div>
+  <div class="wrap" id="comments" data-id="2020/12/17/leetcode/Partition-List-LCCI/"></div>
 
 
         </div>
@@ -265,9 +255,6 @@ csger site = Blog</title>
           <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-number">1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Submission"><span class="toc-number">2.</span> <span class="toc-text">Submission</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
-        <ul>
-          <li><a href="/2020/11/27/database/Consecutive-Numbers/" rel="bookmark" title="Consecutive Numbers">Consecutive Numbers</a></li><li><a href="/2020/11/27/database/Department-Highest-Salary/" rel="bookmark" title="Department Highest Salary">Department Highest Salary</a></li><li class="active"><a href="/2020/11/30/database/Duplicate-Emails/" rel="bookmark" title="Duplicate Emails">Duplicate Emails</a></li>
-        </ul>
       </div>
       <div class="overview panel" data-title="Overview">
         <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -344,12 +331,10 @@ csger site = Blog</title>
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/2020/11/30/leetcode/Minimize-Deviation-in-Array/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/2020/12/01/leetcode/Minimum-Number-of-Removals-to-Make-Mountain-Array/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -371,10 +356,30 @@ csger site = Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/leetcode/" title="In leetcode">leetcode</a>
+<a href="/categories/couresra-notes/" title="In couresra-notes">couresra-notes</a>
 </div>
 
-    <span><a href="/2020/12/09/leetcode/Unique-Paths/" title="Unique Paths">Unique Paths</a></span>
+    <span><a href="/2020/10/04/couresra-notes/object-oriented-design-2/" title="object-oriented design 2">object-oriented design 2</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/database/" title="In database">database</a>
+</div>
+
+    <span><a href="/2020/11/27/database/Department-Highest-Salary/" title="Department Highest Salary">Department Highest Salary</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/couresra-notes/" title="In couresra-notes">couresra-notes</a>
+</div>
+
+    <span><a href="/2020/11/03/couresra-notes/Object-oriented-design-Review4/" title="Object-oriented design Review3">Object-oriented design Review3</a></span>
   </li>
 
       
@@ -384,7 +389,7 @@ csger site = Blog</title>
 <a href="/categories/leetcode/" title="In leetcode">leetcode</a>
 </div>
 
-    <span><a href="/2020/11/21/leetcode/Sort-List/" title="Sort List">Sort List</a></span>
+    <span><a href="/2020/11/18/leetcode/The-Longest-substring-without-repeat-char/" title="The Longest substring without repeat char">The Longest substring without repeat char</a></span>
   </li>
 
       
@@ -394,17 +399,7 @@ csger site = Blog</title>
 <a href="/categories/leetcode/" title="In leetcode">leetcode</a>
 </div>
 
-    <span><a href="/2020/12/07/leetcode/Partition-List/" title="Partition List">Partition List</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/leetcode/" title="In leetcode">leetcode</a>
-</div>
-
-    <span><a href="/2020/12/04/leetcode/Count-Triplets-That-can-form-two-arrays-of-equal-XOR/" title="Untitled">Untitled</a></span>
+    <span><a href="/2020/12/01/leetcode/Minimum-Number-of-Removals-to-Make-Mountain-Array/" title="Minimum Number of Removals to Make Mountain Array">Minimum Number of Removals to Make Mountain Array</a></span>
   </li>
 
       
@@ -424,7 +419,7 @@ csger site = Blog</title>
 <a href="/categories/leetcode/" title="In leetcode">leetcode</a>
 </div>
 
-    <span><a href="/2020/11/06/leetcode/Sort-Integers-by-the-number-of-1-bit/" title="Sort Integers by the number of 1 bit">Sort Integers by the number of 1 bit</a></span>
+    <span><a href="/2020/12/07/leetcode/Partition-List/" title="Partition List">Partition List</a></span>
   </li>
 
       
@@ -441,9 +436,10 @@ csger site = Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/categories/leetcode/" title="In leetcode">leetcode</a>
 </div>
 
-    <span><a href="/2020/12/17/leetcode/Partition-List-LCCI/" title="Partition List LCCI">Partition List LCCI</a></span>
+    <span><a href="/2020/10/11/leetcode/Partition-equal-subset-sum/" title="Partition equal subset sum">Partition equal subset sum</a></span>
   </li>
 
       
@@ -453,17 +449,7 @@ csger site = Blog</title>
 <a href="/categories/leetcode/" title="In leetcode">leetcode</a>
 </div>
 
-    <span><a href="/2020/11/30/leetcode/Reorganize-String/" title="Reorganize String">Reorganize String</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/leetcode/" title="In leetcode">leetcode</a>
-</div>
-
-    <span><a href="/2020/11/16/leetcode/Queue-Reconstruction-by-Height/" title="Queue Reconstruction by Height">Queue Reconstruction by Height</a></span>
+    <span><a href="/2020/11/10/leetcode/Next-Permutation/" title="Next Permutation">Next Permutation</a></span>
   </li>
 
   </ul>
@@ -493,7 +479,7 @@ csger site = Blog</title>
   </div>
 <script data-config type="text/javascript">
   var LOCAL = {
-    path: 'http://csger.xyz/2020/11/30/database/Duplicate-Emails/',
+    path: 'http://csger.xyz/2020/12/17/leetcode/Partition-List-LCCI/',
     favicon: {
       show: "（●´3｀●）",
       hide: "(´Д｀)"
