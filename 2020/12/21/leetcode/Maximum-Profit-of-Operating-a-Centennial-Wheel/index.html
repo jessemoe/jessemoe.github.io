@@ -24,19 +24,19 @@
 <link rel="stylesheet" href="/css/app.css?v=0.1.9">
 
   
-  <meta name="keywords" content="programming" />
+  <meta name="keywords" content="leetcode,greedy" />
 
 
 
 <meta name="description" content="" >
 
 
-<link rel="canonical" href="http://csger.xyz/2020/11/03/couresra-notes/Object-oriented-design-Review4/">
+<link rel="canonical" href="http://csger.xyz/2020/12/21/leetcode/Maximum-Profit-of-Operating-a-Centennial-Wheel/">
 
 
 
   <title>
-Object-oriented design Review3 - couresra-notes |
+Maximum Profit of Operating a Centennial Wheel |
 csger site = Blog</title>
 <meta name="generator" content="Hexo 5.2.0"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -64,16 +64,16 @@ csger site = Blog</title>
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">Object-oriented design Review3
+  <h1 itemprop="name headline">Maximum Profit of Operating a Centennial Wheel
   </h1>
   
 <div class="meta">
-  <span class="item" title="Created: 2020-11-03 00:03:57">
+  <span class="item" title="Created: 2020-12-21 12:36:43">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
     <span class="text">Posted on</span>
-    <time itemprop="dateCreated datePublished" datetime="2020-11-03T00:03:57+08:00">2020-11-03</time>
+    <time itemprop="dateCreated datePublished" datetime="2020-12-21T12:36:43+08:00">2020-12-21</time>
   </span>
 </div>
 
@@ -106,12 +106,12 @@ csger site = Blog</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicis3attqj20zk0m8k7l.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giciusoyjnj219g0u0x56.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipeybxm1pj20zk0m8niv.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giph47e9vtj20zk0m8x6l.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclhtuo6nj20zk0m8ttm.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipey84bjtj20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicmnywqgpj20zk0m8dwx.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipeuv80yoj20zk0m8kjl.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclize41wj20zk0m87gk.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicm0n457cj20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipevuctzzj20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclfw2t96j20zk0m8x6p.jpg"></li>
         </ul>
       </div>
     </header>
@@ -136,13 +136,11 @@ csger site = Blog</title>
     
 <div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
 <i class="ic i-home"></i>
-<span><a href="/">Home</a></span><i class="ic i-angle-right"></i>
-<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/couresra-notes/" itemprop="item" rel="index" title="In couresra-notes"><span itemprop="name">couresra-notes</span></a>
-<meta itemprop="position" content="1" /></span>
+<span><a href="/">Home</a></span>
 </div>
 
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
-  <link itemprop="mainEntityOfPage" href="http://csger.xyz/2020/11/03/couresra-notes/Object-oriented-design-Review4/">
+  <link itemprop="mainEntityOfPage" href="http://csger.xyz/2020/12/21/leetcode/Maximum-Profit-of-Operating-a-Centennial-Wheel/">
 
   <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="image" content="/images/avatar.jpg">
@@ -157,127 +155,13 @@ csger site = Blog</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <ul>
-<li><p>The first stage of the two-stage design process is _______ design.</p>
-<p>Hint: This stage has activities like creating CRC cards, talking with the customer about their requirements, and creating mockups.<br>  <del>Thinking</del></p>
-<pre><code>~~software~~</code></pre>
-<p>​    outline</p>
-</li>
-<li><ol start="2">
-<li>The second stage of the two-stage design process is <strong>____</strong> design.</li>
-</ol>
-<p>Hint: This is when you will define the structure of the code and start turning your mockups into classes.<br><del>software</del><br>​    <del>UML</del><br><del>model</del></p>
-<pre><code>detail</code></pre>
-</li>
-<li><ol start="3">
-<li>Which of these conceptual design techniques will help you analyze the problem space to determine classes for your object-oriented software?<br><del>tradeoffs</del><br>mockups<br>CRC</li>
-</ol>
-</li>
-<li><ol start="4">
-<li>During conceptual design, once the problem is mapped into components, what are the other two critical pieces of information that you must specify for these classes or components?<br><del>abstract data types</del><br><del>methods</del><br>collaborators<br>responsibilities</li>
-</ol>
-</li>
-<li><ol start="5">
-<li>You are writing the CRC card for a Bear component.<br><del>den</del><br><del>camper</del><br>hunger<br>eat berries</li>
-</ol>
-</li>
-<li><ol start="6">
-<li>You are writing the CRC card for a Bear component.<br>den<br>tree<br>bear</li>
-</ol>
-</li>
-<li><ol start="7">
-<li>You create an object that represents a user, storing important information about them such as their preferences. What kind of object is this?<br><del>control</del><br><del>boundary</del><br>entity</li>
-</ol>
-</li>
-<li><ol start="8">
-<li>You create an object that represents a dialog box. It creates buttons and text fields, etc, for the user to interact with, and it logs those interactions. What kind of object is this?<br><del>interaction</del><br><del>control</del><br>boundary</li>
-</ol>
-</li>
-<li><ol start="9">
-<li>You create an object that compares values from two different sources. It then updates the smaller value to be equal to the larger one. What kind of object is this?<br><del>entity</del><br>control</li>
-</ol>
-</li>
-<li><ol start="10">
-<li>Which of these is an example of a quality tradeoff?<br><del>Limiting features knowing that they can be added later</del><br><del>Adding preferences</del><br><del>Not delivering key feature</del><br>Adding security knowing it will reduce speed</li>
-</ol>
-</li>
-<li><ol start="11">
-<li>What is the term for reducing a class or object to its inputs and outputs in modelling?<br><del>filter thinking</del><br>black box thinking</li>
-</ol>
-</li>
-<li><p>Which one of these classes is in most need of being decomposed?<br><del>Order</del><br>store</p>
-</li>
-<li><ol start="13">
-<li>In order to provide good encapsulation, fill-in-the-blanks on this UML class diagram: (Replace the underscores _ from top to bottom with minus signs (“-“) or plus signs (“+”); your answer will be a string of six + or - signs with no spaces)</li>
-</ol>
-<p>+++-+- ×<br>+++— ×<br>+-++– ×<br>+++++-</p>
-</li>
-<li><ol start="14">
-<li>You are writing a simple soccer video game. Select the best example of proper abstraction:<br><img data-src="https://tvax1.sinaimg.cn/large/787a8ef1ly1gkbx383i88j20nz0kgjsk.jpg" alt="Alt text"><br>a</li>
-</ol>
-</li>
-<li><ol start="15">
-<li>Which design principle enables developers to follow the guideline D.R.Y.<br>generalization</li>
-</ol>
-</li>
-<li><p>16 Which of these UML class diagrams shows an association relationship?<br><img data-src="https://tvax4.sinaimg.cn/large/787a8ef1ly1gkbx5yvxhoj210211vmxt.jpg" alt="Alt text">    <del>a</del><br>b</p>
-</li>
-<li><ol start="17">
-<li>Which of these UML class diagrams depicts an aggregation (“has-a”) relationship between the two classes?<br><img data-src="https://tva4.sinaimg.cn/large/787a8ef1ly1gkbx7ms024j210211vmxt.jpg" alt="Alt text"><br>a<br><del>c</del></li>
-</ol>
-</li>
-<li><ol start="18">
-<li>Which of these UML class diagrams depicts a composition, or a strong “has-a” relationship?<br><img data-src="https://tvax4.sinaimg.cn/large/787a8ef1ly1gkbx5yvxhoj210211vmxt.jpg" alt="Alt text"><br>d</li>
-</ol>
-</li>
-<li><p>19.Select the object pairing that has an association relationship:<br>Hiker-Trail</p>
-</li>
-<li><ol start="20">
-<li>Select the object pairing that has an aggregation relationship:<br><del>Pie-Crust</del><br><del>Book-Page</del><br><del>Car-Road</del><br>Stapler-Staple</li>
-</ol>
-</li>
-<li><p>21.Select the object pairing that has a composition relationship:<br><del>Tea-Sugar</del><br><del>Record Player-Record</del><br><del>Bear-Forest</del><br>book-Page</p>
-</li>
-<li><ol start="22">
-<li>Choose the two answers that correctly complete the following sentence:<br>“We say that a class has low cohesion if…”<br>it tries to encapsulate<br>its purpose is unclear<br><del>it does not have all the necessary</del><br><del>connects to many other classes</del></li>
-</ol>
-</li>
-<li><ol start="23">
-<li>Two classes are tightly coupled. What are some ways you might be able to tell?<br>They are very highly<br>in order to understand<br><del>Their interactions</del><br><del>They can easily be swapped</del></li>
-</ol>
-</li>
-<li><ol start="24">
-<li>How can you apply the principle of Separation of Concerns in object-oriented programming?<br>Separate objects or compoents</li>
-</ol>
-</li>
-<li><ol start="25">
-<li>Which of these violates Liskov’s Substitution Principle?<br><del>subclasses specify</del><br>an operation</li>
-</ol>
-</li>
-<li><ol start="26">
-<li>For which of these situations would you use a sequence diagram?<br><del>To show the different modes</del><br>to show the collaborative</li>
-</ol>
-</li>
-<li><ol start="27">
-<li>Choose the correct state diagram for a car which has a state called “HasGas:”<br><img data-src="https://tvax3.sinaimg.cn/large/787a8ef1ly1gkbxikipb6j20qo0k0t9c.jpg" alt="Alt text"><br>c</li>
-</ol>
-</li>
-<li><ol start="28">
-<li>Which of these elements represents a termination in a UML State diagram?<br><img data-src="https://tvax4.sinaimg.cn/large/787a8ef1ly1gkbxjjl1dvj20qo0k0746.jpg" alt="Alt text"><br>a<br><del>b</del><br><del>c</del><br><del>d</del></li>
-</ol>
-</li>
-<li><ol start="29">
-<li>What is the purpose of model checking?<br><del>To verify that technical implementation</del><br><del>To verify that the conceptual</del><br>to check the software for errors</li>
-</ol>
-</li>
-<li><ol start="30">
-<li>What is an abstract data type?<br><del>varibles that are assigned a type</del><br><del>a data type that cannot be used directly</del><br>a type of data defined by the develper</li>
-</ol>
-</li>
-</ul>
+    <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p><img data-src="https://tvax4.sinaimg.cn/large/787a8ef1gy1glvdgk1ltpj20gq0e8q4o.jpg" alt="image"></p>
+<h2 id="Submission"><a href="#Submission" class="headerlink" title="Submission"></a>Submission</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minOperationsMaxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; customers, <span class="keyword">int</span> boardingCost, <span class="keyword">int</span> runningCost)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> profit = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> maxProfit = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">int</span> wait = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> turn = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(wait != <span class="number">0</span> || turn &lt; customers.size())&#123;</span><br><span class="line">            wait += (turn &lt; customers.size()) ? customers[turn] : <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> upCnt = min(wait, <span class="number">4</span>);</span><br><span class="line">            wait -= upCnt;</span><br><span class="line">            profit += upCnt * boardingCost - runningCost;</span><br><span class="line">            <span class="keyword">if</span>(profit &gt; maxProfit)&#123;</span><br><span class="line">                maxProfit = profit;</span><br><span class="line">                ans = turn + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            turn++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 
       <div class="tags">
-          <a href="/tags/programming/" rel="tag"><i class="ic i-tag"></i> programming</a>
+          <a href="/tags/leetcode/" rel="tag"><i class="ic i-tag"></i> leetcode</a>
+          <a href="/tags/greedy/" rel="tag"><i class="ic i-tag"></i> greedy</a>
       </div>
   </div>
 
@@ -289,7 +173,7 @@ csger site = Blog</title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2020-11-03 23:26:26" itemprop="dateModified" datetime="2020-11-03T23:26:26+08:00">2020-11-03</time>
+    <time title="Modified: 2020-12-21 12:39:51" itemprop="dateModified" datetime="2020-12-21T12:39:51+08:00">2020-12-21</time>
   </span>
 </div>
 
@@ -325,7 +209,7 @@ csger site = Blog</title>
   </li>
   <li class="link">
     <strong>Post link: </strong>
-    <a href="http://csger.xyz/2020/11/03/couresra-notes/Object-oriented-design-Review4/" title="Object-oriented design Review3">http://csger.xyz/2020/11/03/couresra-notes/Object-oriented-design-Review4/</a>
+    <a href="http://csger.xyz/2020/12/21/leetcode/Maximum-Profit-of-Operating-a-Centennial-Wheel/" title="Maximum Profit of Operating a Centennial Wheel">http://csger.xyz/2020/12/21/leetcode/Maximum-Profit-of-Operating-a-Centennial-Wheel/</a>
   </li>
   <li class="license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
@@ -344,27 +228,19 @@ csger site = Blog</title>
     <div class="item left">
       
 
-  <a href="/2020/10/26/couresra-notes/Object-oriented-design-Review-3/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipexe4oykj20zk0m87ji.jpg" title="Object-oriented design Review 3">
+  <a href="/2020/12/20/leetcode/Remove-Duplicate-Letters/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipey84bjtj20zk0m8hdt.jpg" title="Remove Duplicate Letters">
   <span class="type">Previous Post</span>
-  <span class="category"><i class="ic i-flag"></i> couresra-notes</span>
-  <h3>Object-oriented design Review 3</h3>
+  <span class="category"><i class="ic i-flag"></i> leetcode</span>
+  <h3>Remove Duplicate Letters</h3>
   </a>
 
     </div>
     <div class="item right">
-      
-
-  <a href="/2020/11/06/leetcode/Sort-Integers-by-the-number-of-1-bit/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giciuja1j1j20zk0m8kjl.jpg" title="Sort Integers by the number of 1 bit">
-  <span class="type">Next Post</span>
-  <span class="category"><i class="ic i-flag"></i> leetcode</span>
-  <h3>Sort Integers by the number of 1 bit</h3>
-  </a>
-
     </div>
 </div>
 
   
-  <div class="wrap" id="comments" data-id="2020/11/03/couresra-notes/Object-oriented-design-Review4/"></div>
+  <div class="wrap" id="comments" data-id="2020/12/21/leetcode/Maximum-Profit-of-Operating-a-Centennial-Wheel/"></div>
 
 
         </div>
@@ -376,11 +252,9 @@ csger site = Blog</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-number">1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Submission"><span class="toc-number">2.</span> <span class="toc-text">Submission</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
-        <ul>
-          <li><a href="/2020/10/26/couresra-notes/Object-oriented-design-Review-3/" rel="bookmark" title="Object-oriented design Review 3">Object-oriented design Review 3</a></li><li class="active"><a href="/2020/11/03/couresra-notes/Object-oriented-design-Review4/" rel="bookmark" title="Object-oriented design Review3">Object-oriented design Review3</a></li><li><a href="/2020/10/04/couresra-notes/object-oriented-design-2/" rel="bookmark" title="object-oriented design 2">object-oriented design 2</a></li><li><a href="/2020/10/02/couresra-notes/object-oriented-design-notes/" rel="bookmark" title="object-oriented design notes">object-oriented design notes</a></li>
-        </ul>
       </div>
       <div class="overview panel" data-title="Overview">
         <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -457,12 +331,10 @@ csger site = Blog</title>
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/2020/10/26/couresra-notes/Object-oriented-design-Review-3/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/2020/11/06/leetcode/Sort-Integers-by-the-number-of-1-bit/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -487,7 +359,7 @@ csger site = Blog</title>
 <a href="/categories/leetcode/" title="In leetcode">leetcode</a>
 </div>
 
-    <span><a href="/2020/11/30/leetcode/Reorganize-String/" title="Reorganize String">Reorganize String</a></span>
+    <span><a href="/2020/12/15/leetcode/Monotone-Increasing-Digits/" title="Monotone Increasing Digits">Monotone Increasing Digits</a></span>
   </li>
 
       
@@ -497,7 +369,7 @@ csger site = Blog</title>
 <a href="/categories/leetcode/" title="In leetcode">leetcode</a>
 </div>
 
-    <span><a href="/2020/12/07/leetcode/Partition-List/" title="Partition List">Partition List</a></span>
+    <span><a href="/2020/12/05/leetcode/Maximum-Sum-Obtained-of-Any-permutation/" title="Maximum Sum Obtained of Any permutation">Maximum Sum Obtained of Any permutation</a></span>
   </li>
 
       
@@ -514,10 +386,10 @@ csger site = Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/leetcode/" title="In leetcode">leetcode</a>
+<a href="/categories/couresra-notes/" title="In couresra-notes">couresra-notes</a>
 </div>
 
-    <span><a href="/2020/12/17/leetcode/Partition-List-LCCI/" title="Partition List LCCI">Partition List LCCI</a></span>
+    <span><a href="/2020/10/04/couresra-notes/object-oriented-design-2/" title="object-oriented design 2">object-oriented design 2</a></span>
   </li>
 
       
@@ -527,27 +399,7 @@ csger site = Blog</title>
 <a href="/categories/leetcode/" title="In leetcode">leetcode</a>
 </div>
 
-    <span><a href="/2020/12/11/leetcode/Dota2-Senate/" title="Dota2 Senate">Dota2 Senate</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/leetcode/" title="In leetcode">leetcode</a>
-</div>
-
-    <span><a href="/2020/11/21/leetcode/Sort-List/" title="Sort List">Sort List</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/database/" title="In database">database</a>
-</div>
-
-    <span><a href="/2020/11/27/database/Consecutive-Numbers/" title="Consecutive Numbers">Consecutive Numbers</a></span>
+    <span><a href="/2020/12/20/leetcode/Remove-Duplicate-Letters/" title="Remove Duplicate Letters">Remove Duplicate Letters</a></span>
   </li>
 
       
@@ -557,7 +409,7 @@ csger site = Blog</title>
 <a href="/categories/life/" title="In life">life</a>
 </div>
 
-    <span><a href="/2020/09/25/life/hello-world/" title="Hello World">Hello World</a></span>
+    <span><a href="/2020/11/25/life/Recommend-a-todo-manager/" title="Recommend a todo manager">Recommend a todo manager</a></span>
   </li>
 
       
@@ -567,7 +419,7 @@ csger site = Blog</title>
 <a href="/categories/leetcode/" title="In leetcode">leetcode</a>
 </div>
 
-    <span><a href="/2020/10/22/leetcode/Partation-Labels/" title="Partation Labels">Partation Labels</a></span>
+    <span><a href="/2020/12/12/leetcode/Wiggle-Subsequence/" title="Wiggle Subsequence">Wiggle Subsequence</a></span>
   </li>
 
       
@@ -577,7 +429,27 @@ csger site = Blog</title>
 <a href="/categories/leetcode/" title="In leetcode">leetcode</a>
 </div>
 
-    <span><a href="/2020/12/08/leetcode/Convert-Sorted-List-to-Binary-Search-Tree/" title="Convert Sorted List to Binary Search Tree">Convert Sorted List to Binary Search Tree</a></span>
+    <span><a href="/2020/12/19/leetcode/Rotate-Image/" title="Rotate Image">Rotate Image</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/leetcode/" title="In leetcode">leetcode</a>
+</div>
+
+    <span><a href="/2020/11/13/leetcode/Odd-Even-Link-list/" title="Odd Even Link list">Odd Even Link list</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/leetcode/" title="In leetcode">leetcode</a>
+</div>
+
+    <span><a href="/2020/12/05/leetcode/Task-Scheduler/" title="Task Scheduler">Task Scheduler</a></span>
   </li>
 
   </ul>
@@ -607,7 +479,7 @@ csger site = Blog</title>
   </div>
 <script data-config type="text/javascript">
   var LOCAL = {
-    path: 'http://csger.xyz/2020/11/03/couresra-notes/Object-oriented-design-Review4/',
+    path: 'http://csger.xyz/2020/12/21/leetcode/Maximum-Profit-of-Operating-a-Centennial-Wheel/',
     favicon: {
       show: "（●´3｀●）",
       hide: "(´Д｀)"
