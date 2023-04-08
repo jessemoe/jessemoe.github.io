@@ -1,1 +1,44 @@
+1) 添加完源后，安装 Cloudflare WARP 客户端：
+```
+sudo apt update
+sudo apt install cloudflare-warp
+```
 
+2) 配置 Cloudflare WARP
+
+如果是第一次安装，你需要先注册一个帐号。其注册信息会在这里/var/lib/cloudflare-warp/reg.json
+
+`warp-cli register`
+然后设置代理模式，这点非常重要，因为默认是 WARP 模式，这个会把你的整个 VPS 带到 Cloudflare 的 VPN 网络中，那么就会出现无法连接的情况。
+
+`warp-cli set-mode proxy`
+然后，设置永久连接模式。
+
+`warp-cli enable-always-on`
+配置完后，你可以使用 `warp-cli settings` 来查看配置。你也可以通过查看配置文件来看是否配置成功，配置文件在 `/var/lib/cloudflare-warp/settings.json`。
+
+3)  连接 Cloudflare WARP
+
+使用如下命令来连接 Cloudflare WARP：
+
+`warp-cli connect`
+你可以使用 `warp-cli status` 来查看连接状态。如：
+```
+> warp-cli status
+Status update: Connected
+Success
+```
+连接成功后，你可以会在本地有一个 Socks5 代理， 127.0.0.1:40000，你可以使用如下命令来查看：
+
+4) 验证 Cloudflare WARP
+
+你可以使用如下命令来验证是否成功：
+
+`curl -x "socks5://127.0.0.1:40000" ipinfo.io`
+如果输出现如下的信息，那么恭喜你，你已经成功了
+```
+{
+  "ip": "104.28.247.70",
+  "org": "AS13335 Cloudflare, Inc."
+}
+```
