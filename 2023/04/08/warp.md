@@ -1,5 +1,5 @@
 ---
-title: {{ WARP 教程（一） }}
+title: WARP 教程（一）
 tags: proxy
 categories: proxy
 ---
