@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "build": "node utils/build.js"
+    "build": "node utils/build.js",
+    "update": "node utils/update.js"
   },
 
   "dependencies": {
