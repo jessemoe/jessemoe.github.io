@@ -1,3 +1,9 @@
+---
+title: {{ WARP 教程（一） }}
+tags: proxy
+categories: proxy
+---
+
 1) 添加完源后，安装 Cloudflare WARP 客户端：
 ```
 sudo apt update

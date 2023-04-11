@@ -1,3 +1,9 @@
+---
+title: {{ Gost教程（一） }}
+tags: proxy
+categories: proxy
+---
+
 配置 Gost 路由转发
 
 你可以使用如下命令来启动 gost 转发规则。下面的命行行意思是，把本地的 8080 端口转发到 Cloudflare WARP 的 Socks5 代理上。
