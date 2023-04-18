@@ -1,0 +1,11 @@
+# This file is used by Jekyll to store metadata about the directory hierarchy.
+#
+# Lines starting with a '#' are comments, and are ignored.
+#
+# Add directories and files to this file to exclude them from the final site.
+#
+# Examples:
+# _site/
+# .sass-cache/
+# css/
+css/
