@@ -12,7 +12,7 @@ description: "个人博客 分享编程资源 | 学习路线"
 # and NOT your User repository (http://yourusername.github.io)
 # then add in the baseurl here, like this: "/repository-name"
 # baseurl: 
-url: 
+url: http://stark-eth.github.io/stark-eth.github.io
 
 # 添加你的博客的二级域名，一般来说是你的repository名
 # 如果你的博客的URL是：(http://yourusername.github.io/repository-name)
