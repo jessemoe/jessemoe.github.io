@@ -120,5 +120,4 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
-  - css/*
-  - .jekyll-metadata
+  - css/
