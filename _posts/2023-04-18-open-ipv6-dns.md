@@ -1,12 +1,13 @@
 ---
 layout: post
-title: Open IPv6 DNS
-date: 2023-04-19
-Author: Stark
-categories: 
+title: open-ipv6-dns
+date: 2023-04-18
+Author: Stark 
 tags: [proxy]
 comments: true
---- 
+toc: true
+---
+
 
 ```
 #cloudflare
