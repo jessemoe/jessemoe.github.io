@@ -1,8 +1,12 @@
 ---
-title: Open Ipv6 DNS
-tags: proxy
-categories: proxy
----
+layout: post
+title: Open IPv6 DNS
+date: 2023-04-19
+Author: Stark
+categories: 
+tags: [proxy]
+comments: true
+--- 
 
 ```
 #cloudflare
