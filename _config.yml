@@ -7,13 +7,17 @@ name: "Stark's blog"
 # Short bio or description (displayed in the header)
 description: "个人博客 分享编程资源 | 学习路线"
 
-# 输入你的网站域名（如果你没有添加自己的域名，而是直接用GitHub pages分配的域名的话可以省略）
-url: cryptonet.tk
+# If you're hosting your site at a Project repository on GitHub pages
+# (http://yourusername.github.io/repository-name)
+# and NOT your User repository (http://yourusername.github.io)
+# then add in the baseurl here, like this: "/repository-name"
+# baseurl: 
+url: 
 
 # 添加你的博客的二级域名，一般来说是你的repository名
 # 如果你的博客的URL是：(http://yourusername.github.io/repository-name)
 # 那么就写成 "/repository-name"
-baseurl: /
+baseurl: /stark-eth.github.io
 
 #
 # Flags below are optional
@@ -78,12 +82,6 @@ gitalk:
 
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
 #google_analytics: 
-
-# If you're hosting your site at a Project repository on GitHub pages
-# (http://yourusername.github.io/repository-name)
-# and NOT your User repository (http://yourusername.github.io)
-# then add in the baseurl here, like this: "/repository-name"
-# baseurl: 
 
 #
 # !! You don't need to change any of the configuration flags below !!
