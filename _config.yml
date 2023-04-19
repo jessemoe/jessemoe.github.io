@@ -105,5 +105,3 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
-  - css
-  - archives
