@@ -106,5 +106,5 @@ exclude:
   - README.md
   - CNAME
 
-include:
-  - archives/*
+include: ["/2023/"]
+
