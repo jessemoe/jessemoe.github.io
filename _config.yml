@@ -106,3 +106,4 @@ exclude:
   - README.md
   - CNAME
   - css/
+  - archives/
