@@ -1,38 +1,30 @@
-fetch('data.json')
-  .then(response => response.json())
-  .then(data => {
-    let html = '';
-    for (const article of data.articles) {
-      html += `
-        <article class="item">
-          <div class="cover">
-            <a href="${article.url}" itemprop="url" title="${article.title}">
-              <img src="${article.img}">
-            </a>
-          </div>
-          <div class="info">
-            <div class="meta">
-              <span class="item" title="Created: ${article.date}">
-                <span class="icon">
-                  <i class="ic i-calendar"></i>
-                </span>
-                <time itemprop="dateCreated datePublished" datetime="${article.date}">${article.date}</time>
-              </span>
-            </div>
-            <h3><a href="${article.url}" itemprop="url" title="${article.title}">${article.title}</a></h3>
-            <div class="excerpt">${article.excerpt}</div>
-            <div class="meta footer">
-              <span>
-                <a href="/categories/${article.category}/" itemprop="url" title="${article.category}">
-                  <i class="ic i-flag"></i>${article.category}
-                </a>
-              </span>
-            </div>
-            <a href="${article.url}" itemprop="url" title="${article.title}" class="btn">more...</a>
-          </div>
-        </article>
-      `;
+const fs = require('fs');
+const path = require('path');
+
+const directory = './2020';
+
+function replaceInFiles(directory, searchString, replaceString) {
+  // 读取目录下的所有文件和子目录
+  const files = fs.readdirSync(directory, { withFileTypes: true });
+
+  // 遍历文件和子目录
+  for (const file of files) {
+    const filePath = path.join(directory, file.name);
+    
+    if (file.isDirectory()) {
+      // 如果是子目录，递归调用replaceInFiles函数
+      replaceInFiles(filePath, searchString, replaceString);
+    } else if (file.isFile() && path.extname(file.name) === '.html') {
+      // 如果是HTML文件，读取文件内容并替换字符串
+      console.log(file)
+
+      let content = fs.readFileSync(filePath, 'utf8');
+      content = content.replace(new RegExp(searchString, 'g'), replaceString);
+
+      // 更新文件内容
+      fs.writeFileSync(filePath, content, 'utf8');
     }
-    document.getElementById('articles').innerHTML = html;
-  })
-  .catch(error => console.error(error));
+  }
+}
+
+replaceInFiles(directory, 'css?', 'css');
