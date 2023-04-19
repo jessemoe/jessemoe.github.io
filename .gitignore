@@ -3,6 +3,7 @@
 /.next/
 /out/
 /build
+/_site
 *.tsbuildinfo
 next-env.d.ts
 .vercel
