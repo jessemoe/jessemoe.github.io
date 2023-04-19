@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const directory = './2020';
+const directory = './2021';
 
 function replaceInFiles(directory, searchString, replaceString) {
   // 读取目录下的所有文件和子目录
@@ -27,4 +27,4 @@ function replaceInFiles(directory, searchString, replaceString) {
   }
 }
 
-replaceInFiles(directory, 'css\\/', '');
+replaceInFiles(directory, 'css\\/app\\.css\\?v=0\\.1\\.9', 'style.css');
