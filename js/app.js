@@ -1,4 +1,4 @@
-var CONFIG = {"version":"0.1.9","hostname":"csger.xyz","root":"/","statics":"/","favicon":{"normal":"images/favicon.ico","hidden":"images/failure.ico"},"js":{"valine":"js/valine.js","chart":"npm/frappe-charts@1.5.0/dist/frappe-charts.min.iife.min.js","copy_tex":"npm/katex@0/dist/contrib/copy-tex.min.js","mediumzoom":"npm/medium-zoom@1.0.5/dist/medium-zoom.min.js"},"css":{"valine":"css/comment.css","katex":"npm/katex@0/dist/katex.min.css","mermaid":"css/mermaid.css"},"search":null,"valine":{"appId":null,"appKey":null,"placeholder":"ヽ(○´∀`)ﾉ♪","avatar":"mp","pageSize":10,"lang":"en","visitor":true,"recordIP":true,"serverURLs":null,"requiredFields":["nick","mail"],"enableQQ":true,"masters":null,"masterTag":"主人","tips":"昵称框中填入QQ号，将自动获取QQ昵称&邮箱&头像；其他邮箱由Gavatar提供头像。"},"quicklink":{"timeout":3000,"priority":true},"audio":["https://music.163.com/#/playlist?id=5207994671"]};const getRndInteger = function (min, max) {
+var CONFIG = { "version": "0.1.9", "hostname": "csger.xyz", "root": "/", "statics": "/", "favicon": { "normal": "images/favicon.ico", "hidden": "images/failure.ico" }, "js": { "valine": "js/valine.js", "chart": "npm/frappe-charts@1.5.0/dist/frappe-charts.min.iife.min.js", "copy_tex": "npm/katex@0/dist/contrib/copy-tex.min.js", "mediumzoom": "npm/medium-zoom@1.0.5/dist/medium-zoom.min.js" }, "css": { "valine": "comment.css", "katex": "npm/katex@0/dist/katex.min.css", "mermaid": "css/mermaid.css" }, "search": null, "valine": { "appId": null, "appKey": null, "placeholder": "ヽ(○´∀`)ﾉ♪", "avatar": "mp", "pageSize": 10, "lang": "en", "visitor": true, "recordIP": true, "serverURLs": null, "requiredFields": ["nick", "mail"], "enableQQ": true, "masters": null, "masterTag": "主人", "tips": "昵称框中填入QQ号，将自动获取QQ昵称&邮箱&头像；其他邮箱由Gavatar提供头像。" }, "quicklink": { "timeout": 3000, "priority": true }, "audio": ["https://music.163.com/#/playlist?id=5207994671"] }; const getRndInteger = function (min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
@@ -6,12 +6,12 @@ const getDocHeight = function () {
   return $('main > .inner').offsetHeight;
 }
 
-const getScript = function(url, callback, condition) {
+const getScript = function (url, callback, condition) {
   if (condition) {
     callback();
   } else {
     var script = document.createElement('script');
-    script.onload = script.onreadystatechange = function(_, isAbort) {
+    script.onload = script.onreadystatechange = function (_, isAbort) {
       if (isAbort || !script.readyState || /loaded|complete/.test(script.readyState)) {
         script.onload = script.onreadystatechange = null;
         script = undefined;
@@ -23,35 +23,35 @@ const getScript = function(url, callback, condition) {
   }
 }
 
-const assetUrl = function(asset, type) {
-  return (CONFIG[asset][type].indexOf('npm')>-1? "//cdn.jsdelivr.net/":statics)+CONFIG[asset][type];
+const assetUrl = function (asset, type) {
+  return (CONFIG[asset][type].indexOf('npm') > -1 ? "//cdn.jsdelivr.net/" : statics) + CONFIG[asset][type];
 }
 
-const vendorJs = function(type, callback, condition) {
-  if(LOCAL[type]) {
-    getScript(assetUrl("js", type), callback || function(){
+const vendorJs = function (type, callback, condition) {
+  if (LOCAL[type]) {
+    getScript(assetUrl("js", type), callback || function () {
       window[type] = true;
     }, condition || window[type]);
   }
 }
 
-const vendorCss = function(type, condition) {
-  if(window['css'+type])
+const vendorCss = function (type, condition) {
+  if (window['css' + type])
     return;
 
-  if(LOCAL[type]) {
+  if (LOCAL[type]) {
 
     document.head.createChild('link', {
       rel: 'stylesheet',
       href: assetUrl("css", type)
     });
 
-    window['css'+type] = true;
+    window['css' + type] = true;
   }
 }
 
 
-const pjaxScript = function(element) {
+const pjaxScript = function (element) {
   var code = element.text || element.textContent || element.innerHTML || '';
   var parent = element.parentNode;
   parent.removeChild(element);
@@ -84,11 +84,11 @@ const pageScroll = function (target, height, complete) {
     duration: 500,
     easing: "easeOutQuart",
     offset: height || -siteNavHeight,
-    complete: complete || function() {}
+    complete: complete || function () { }
   });
 }
 
-const padWithZeros = function(vNumber, width) {
+const padWithZeros = function (vNumber, width) {
   var numAsString = vNumber.toString()
   while (numAsString.length < width) {
     numAsString = '0' + numAsString
@@ -96,35 +96,35 @@ const padWithZeros = function(vNumber, width) {
   return numAsString
 }
 
-const dateFormat = function(date) {
+const dateFormat = function (date) {
   var vDay = padWithZeros(date.getDate(), 2)
   var vMonth = padWithZeros(date.getMonth() + 1, 2)
   var vYear = padWithZeros(date.getFullYear(), 2)
   var vHour = padWithZeros(date.getHours(), 2);
   var vMinute = padWithZeros(date.getMinutes(), 2);
   var vSecond = padWithZeros(date.getSeconds(), 2);
-  return vYear + '-' + vMonth+ '-' + vDay + ' ' +vHour+ ':' +vMinute+ ':' +vSecond;
+  return vYear + '-' + vMonth + '-' + vDay + ' ' + vHour + ':' + vMinute + ':' + vSecond;
 }
-const $ = function(selector, element) {
+const $ = function (selector, element) {
   element = element || document;
-  if(selector.indexOf('#') === 0) {
+  if (selector.indexOf('#') === 0) {
     return element.getElementById(selector.replace('#', ''))
   }
   return element.querySelector(selector)
 };
 
-$.all = function(selector, element) {
+$.all = function (selector, element) {
   element = element || document;
   return element.querySelectorAll(selector)
 };
 
-$.each = function(selector, callback, element) {
+$.each = function (selector, callback, element) {
   return $.all(selector, element).forEach(callback)
 }
 
 
 Object.assign(HTMLElement.prototype, {
-  createChild: function(tag, obj) {
+  createChild: function (tag, obj) {
     var child = document.createElement(tag);
     Object.assign(child, obj)
     this.appendChild(child)
@@ -137,129 +137,129 @@ Object.assign(HTMLElement.prototype, {
     this.parentNode.removeChild(this);
     box.appendChild(this);
   },
-  height: function(h) {
-    if(h) {
+  height: function (h) {
+    if (h) {
       this.style.height = typeof h == 'number' ? h + 'rem' : h;
     }
     return this.getBoundingClientRect().height
   },
-  width: function(w) {
-    if(w) {
+  width: function (w) {
+    if (w) {
       this.style.width = typeof w == 'number' ? w + 'rem' : w;
     }
     return this.getBoundingClientRect().width
   },
-  top: function() {
+  top: function () {
     return this.getBoundingClientRect().top
   },
-  left:function() {
+  left: function () {
     return this.getBoundingClientRect().left
   },
-  attr: function(type, value) {
-    if(value === null) {
+  attr: function (type, value) {
+    if (value === null) {
       return this.removeAttribute(type)
     }
 
-    if(value) {
+    if (value) {
       return this.setAttribute(type, value)
     } else {
       return this.getAttribute(type)
     }
   },
-  insertAfter: function(element) {
+  insertAfter: function (element) {
     var parent = this.parentNode;
-    if(parent.lastChild == this){
-        parent.appendChild(element);
-    }else{
-        parent.insertBefore(element, this.nextSibling);
+    if (parent.lastChild == this) {
+      parent.appendChild(element);
+    } else {
+      parent.insertBefore(element, this.nextSibling);
     }
   },
-  display: function(d) {
-    if(d == null) {
+  display: function (d) {
+    if (d == null) {
       return this.style.display
     } else {
       this.style.display = d;
     }
   },
-  child: function(selector) {
+  child: function (selector) {
     return $(selector, this)
   },
-  find: function(selector) {
+  find: function (selector) {
     return $.all(selector, this)
   },
-  _class: function(type, className, display) {
-    var classNames = className.indexOf(' ') ?  className.split(' ') : [className];
+  _class: function (type, className, display) {
+    var classNames = className.indexOf(' ') ? className.split(' ') : [className];
     var that = this;
-    classNames.forEach(function(name) {
-      if(type == 'toggle') {
+    classNames.forEach(function (name) {
+      if (type == 'toggle') {
         that.classList.toggle(name, display)
       } else {
         that.classList[type](name)
       }
     })
   },
-  addClass: function(className) {
+  addClass: function (className) {
     this._class('add', className);
     return this;
   },
-  removeClass: function(className) {
+  removeClass: function (className) {
     this._class('remove', className);
     return this;
   },
-  toggleClass: function(className, display) {
+  toggleClass: function (className, display) {
     this._class('toggle', className, display);
     return this;
   },
-  hasClass: function(className) {
+  hasClass: function (className) {
     return this.classList.contains(className)
   }
 });
 
 const store = {
-  get: function(item) {
+  get: function (item) {
     return localStorage.getItem(item);
   },
-  set: function(item, str) {
+  set: function (item, str) {
     localStorage.setItem(item, str);
     return str;
   },
-  del: function(item) {
+  del: function (item) {
     localStorage.removeItem(item);
   }
 }
 
-const mediaPlayer = function(config) {
+const mediaPlayer = function (config) {
   var t = this,
-  option = {
-    type: 'audio',
-    mode: 'random',
-    btns: ['play-pause', 'music'],
-    events: {
-      "play-pause": function(event) {
-          if(t.media.source.paused) {
+    option = {
+      type: 'audio',
+      mode: 'random',
+      btns: ['play-pause', 'music'],
+      events: {
+        "play-pause": function (event) {
+          if (t.media.source.paused) {
             t.media.play()
           } else {
             t.media.pause()
           }
-      },
-      "music": function(event) {
-        if(t.media.list.hasClass('show')) {
-          t.media.hideList()
-        } else {
-          t.media.list.addClass('show');
-          t.media.scroll();
-          t.media.changeTitle();
+        },
+        "music": function (event) {
+          if (t.media.list.hasClass('show')) {
+            t.media.hideList()
+          } else {
+            t.media.list.addClass('show');
+            t.media.scroll();
+            t.media.changeTitle();
+          }
         }
       }
-    }
-  };
+    };
 
   var
     utils = {
-      random: function(len) {
-        return Math.floor((Math.random()*len))
+      random: function (len) {
+        return Math.floor((Math.random() * len))
       },
-      parse: function(link) {
+      parse: function (link) {
         var result = [];
         [
           ['music.163.com.*song.*id=(\\d+)', 'netease', 'song'],
@@ -276,7 +276,7 @@ const mediaPlayer = function(config) {
           ['xiami.com.*album/(\\w+)', 'xiami', 'album'],
           ['xiami.com.*artist/(\\w+)', 'xiami', 'artist'],
           ['xiami.com.*collect/(\\w+)', 'xiami', 'playlist'],
-        ].forEach(function(rule) {
+        ].forEach(function (rule) {
           var patt = new RegExp(rule[0])
           var res = patt.exec(link)
           if (res !== null) {
@@ -285,64 +285,64 @@ const mediaPlayer = function(config) {
         })
         return result
       },
-      fetch: function(source, callback) {
+      fetch: function (source, callback) {
         var list = []
 
-        return new Promise(function(resolve, reject){
-          source.forEach(function(raw) {
+        return new Promise(function (resolve, reject) {
+          source.forEach(function (raw) {
             var meta = utils.parse(raw)
             var skey = JSON.stringify(meta)
             var playlist = store.get(skey)
-            if(playlist) {
+            if (playlist) {
               list.push.apply(list, JSON.parse(playlist));
               resolve(list);
             } else {
-              fetch('https://api.i-meto.com/meting/api?server='+meta[0]+'&type='+meta[1]+'&id='+meta[2]+'&r='+ Math.random())
-                .then(function(response) {
+              fetch('https://api.i-meto.com/meting/api?server=' + meta[0] + '&type=' + meta[1] + '&id=' + meta[2] + '&r=' + Math.random())
+                .then(function (response) {
                   return response.json()
-                }).then(function(json) {
+                }).then(function (json) {
                   store.set(skey, JSON.stringify(json))
                   list.push.apply(list, json);
                   resolve(list);
-                }).catch(function(ex) {})
+                }).catch(function (ex) { })
             }
           })
         })
       },
-      lrc: function(lrc_s) {
+      lrc: function (lrc_s) {
         if (lrc_s) {
-            lrc_s = lrc_s.replace(/([^\]^\n])\[/g, function(match, p1){return p1 + '\n['});
-            const lyric = lrc_s.split('\n');
-            var lrc = [];
-            const lyricLen = lyric.length;
-            for (var i = 0; i < lyricLen; i++) {
-                // match lrc time
-                const lrcTimes = lyric[i].match(/\[(\d{2}):(\d{2})(\.(\d{2,3}))?]/g);
-                // match lrc text
-                const lrcText = lyric[i]
-                    .replace(/.*\[(\d{2}):(\d{2})(\.(\d{2,3}))?]/g, '')
-                    .replace(/<(\d{2}):(\d{2})(\.(\d{2,3}))?>/g, '')
-                    .replace(/^\s+|\s+$/g, '');
+          lrc_s = lrc_s.replace(/([^\]^\n])\[/g, function (match, p1) { return p1 + '\n[' });
+          const lyric = lrc_s.split('\n');
+          var lrc = [];
+          const lyricLen = lyric.length;
+          for (var i = 0; i < lyricLen; i++) {
+            // match lrc time
+            const lrcTimes = lyric[i].match(/\[(\d{2}):(\d{2})(\.(\d{2,3}))?]/g);
+            // match lrc text
+            const lrcText = lyric[i]
+              .replace(/.*\[(\d{2}):(\d{2})(\.(\d{2,3}))?]/g, '')
+              .replace(/<(\d{2}):(\d{2})(\.(\d{2,3}))?>/g, '')
+              .replace(/^\s+|\s+$/g, '');
 
-                if (lrcTimes) {
-                    // handle multiple time tag
-                    const timeLen = lrcTimes.length;
-                    for (var j = 0; j < timeLen; j++) {
-                        const oneTime = /\[(\d{2}):(\d{2})(\.(\d{2,3}))?]/.exec(lrcTimes[j]);
-                        const min2sec = oneTime[1] * 60;
-                        const sec2sec = parseInt(oneTime[2]);
-                        const msec2sec = oneTime[4] ? parseInt(oneTime[4]) / ((oneTime[4] + '').length === 2 ? 100 : 1000) : 0;
-                        const lrcTime = min2sec + sec2sec + msec2sec;
-                        lrc.push([lrcTime, lrcText]);
-                    }
-                }
+            if (lrcTimes) {
+              // handle multiple time tag
+              const timeLen = lrcTimes.length;
+              for (var j = 0; j < timeLen; j++) {
+                const oneTime = /\[(\d{2}):(\d{2})(\.(\d{2,3}))?]/.exec(lrcTimes[j]);
+                const min2sec = oneTime[1] * 60;
+                const sec2sec = parseInt(oneTime[2]);
+                const msec2sec = oneTime[4] ? parseInt(oneTime[4]) / ((oneTime[4] + '').length === 2 ? 100 : 1000) : 0;
+                const lrcTime = min2sec + sec2sec + msec2sec;
+                lrc.push([lrcTime, lrcText]);
+              }
             }
-            // sort by time
-            lrc = lrc.filter(function(item){return item[1]});
-            lrc.sort(function(a, b){return a[0] - b[0]});
-            return lrc;
+          }
+          // sort by time
+          lrc = lrc.filter(function (item) { return item[1] });
+          lrc.sort(function (a, b) { return a[0] - b[0] });
+          return lrc;
         } else {
-            return [];
+          return [];
         }
       }
     }
@@ -356,9 +356,9 @@ const mediaPlayer = function(config) {
     lrc: {},
     fetch: function (callback) {
       var that = this;
-      callback = callback || function() {}
-      if(!this.loaded) {
-        utils.fetch(this.options.rawList).then(function(list) {
+      callback = callback || function () { }
+      if (!this.loaded) {
+        utils.fetch(this.options.rawList).then(function (list) {
           that.playlist = list;
           create.list();
           that.setMode(t.media.options.mode);
@@ -369,11 +369,11 @@ const mediaPlayer = function(config) {
         callback()
       }
     },
-    load: function(newList) {
-      if(newList) {
-        if(this.options.rawList !== newList) {
+    load: function (newList) {
+      if (newList) {
+        if (this.options.rawList !== newList) {
           this.options.rawList = newList;
-          if(this.loaded) {
+          if (this.loaded) {
             this.loaded = false;
             this.fetch();
           }
@@ -381,14 +381,14 @@ const mediaPlayer = function(config) {
       }
     },
     // 根据模式切换当前曲目pointer
-    setMode: function(mode) {
+    setMode: function (mode) {
       var total = this.playlist.length;
 
-      if(!total)
+      if (!total)
         return;
 
-      var next = function(pointer) {
-        if((pointer + 1) == total) {
+      var next = function (pointer) {
+        if ((pointer + 1) == total) {
           pointer = -1;
         }
         t.media.pointer = ++pointer;
@@ -397,7 +397,7 @@ const mediaPlayer = function(config) {
       switch (mode) {
         case 'random':
           var p = utils.random(total)
-          if(this.pointer !== p) {
+          if (this.pointer !== p) {
             this.pointer = p
           } else {
             next(this.pointer)
@@ -411,23 +411,23 @@ const mediaPlayer = function(config) {
       this.setSource()
     },
     // 直接设置当前曲目pointer
-    setCurrent: function(pointer) {
-      if(typeof pointer == 'number' && pointer != this.pointer && this.playlist[pointer] && !this.playlist[pointer]['error']) {
+    setCurrent: function (pointer) {
+      if (typeof pointer == 'number' && pointer != this.pointer && this.playlist[pointer] && !this.playlist[pointer]['error']) {
         this.pointer = pointer;
         this.setSource()
       }
     },
     // 更新source为当前曲目pointer
-    setSource: function() {
+    setSource: function () {
       var item = this.playlist[this.pointer]
 
-      if(item['error']) {
+      if (item['error']) {
         this.setMode('next');
         return;
       }
 
       var playing = false;
-      if(!this.source.paused) {
+      if (!this.source.paused) {
         playing = true
         this.stop()
       }
@@ -438,103 +438,103 @@ const mediaPlayer = function(config) {
       create.progress()
       create.preview()
 
-      if(playing == true) {
+      if (playing == true) {
         this.play()
       }
     },
-    play: function() {
-      if(this.playlist[this.pointer]['error']) {
+    play: function () {
+      if (this.playlist[this.pointer]['error']) {
         this.setMode('next');
         return;
       }
       var that = this
-      this.source.play().then(function() {
+      this.source.play().then(function () {
         that.changeTitle()
-      }).catch(function(e) {});
+      }).catch(function (e) { });
     },
-    pause: function() {
+    pause: function () {
       this.source.pause()
       document.title = originTitle
     },
-    stop: function() {
+    stop: function () {
       this.source.pause();
       this.source.currentTime = 0;
       document.title = originTitle;
     },
-    scroll: function() {
+    scroll: function () {
       var current = this.list.find('li')[this.pointer];
       Velocity(current, "scroll", {
         container: current.parentNode
       });
     },
-    scrollLrc: function(currentTime) {
+    scrollLrc: function (currentTime) {
       var that = this
-      if(!this.lrc.data)
+      if (!this.lrc.data)
         return
 
       if (this.lrc.index > this.lrc.data.length - 1 || currentTime < this.lrc.data[this.lrc.index][0] || (!this.lrc.data[this.lrc.index + 1] || currentTime >= this.lrc.data[this.lrc.index + 1][0])) {
-          for (var i = 0; i < this.lrc.data.length; i++) {
-              if (currentTime >= this.lrc.data[i][0] && (!this.lrc.data[i + 1] || currentTime < this.lrc.data[i + 1][0])) {
-                  that.lrc.index = i;
-                  var y = -(that.lrc.index-1);
-                  that.lrc.el.style.transform = 'translateY('+y+'rem)';
-                  that.lrc.el.style.webkitTransform = 'translateY('+y+'rem)';
-                  that.lrc.el.getElementsByClassName('current')[0].removeClass('current');
-                  that.lrc.el.getElementsByTagName('p')[i].addClass('current');
-              }
+        for (var i = 0; i < this.lrc.data.length; i++) {
+          if (currentTime >= this.lrc.data[i][0] && (!this.lrc.data[i + 1] || currentTime < this.lrc.data[i + 1][0])) {
+            that.lrc.index = i;
+            var y = -(that.lrc.index - 1);
+            that.lrc.el.style.transform = 'translateY(' + y + 'rem)';
+            that.lrc.el.style.webkitTransform = 'translateY(' + y + 'rem)';
+            that.lrc.el.getElementsByClassName('current')[0].removeClass('current');
+            that.lrc.el.getElementsByTagName('p')[i].addClass('current');
           }
+        }
       }
     },
-    hideList: function() {
+    hideList: function () {
       var el = this.list
       el.addClass('hide');
-      window.setTimeout(function() {
+      window.setTimeout(function () {
         el.removeClass('show hide')
       }, 300);
     },
-    changeTitle: function() {
-      if(!this.source.paused)
+    changeTitle: function () {
+      if (!this.source.paused)
         document.title = 'Now Playing...' + this.playlist[this.pointer]['title'] + ' - ' + this.playlist[this.pointer]['author'] + ' | ' + originTitle;
     }
   };
 
   var create = {
-    button: function(b) {
-      if(!t.media.buttons[b]) {
+    button: function (b) {
+      if (!t.media.buttons[b]) {
         var el = document.createElement('div');
         el.addClass(b + ' btn');
-        el.addEventListener('click', function(){
+        el.addEventListener('click', function () {
           t.media.fetch(t.media.options.events[b])
         });
         t.appendChild(el);
         t.media.buttons[b] = el;
       }
     },
-    audio: function() {
-      if(!t.media.source) {
+    audio: function () {
+      if (!t.media.source) {
         var el = document.createElement('audio');
 
-        el.addEventListener('error', function() {
+        el.addEventListener('error', function () {
           t.media.list.find('li')[t.media.pointer].addClass('error')
           t.media.playlist[t.media.pointer]['error'] = true
           t.media.setMode('next');
         });
 
-        el.addEventListener('play', function() {
+        el.addEventListener('play', function () {
           t.addClass('playing');
           t.media.list.addClass('playing');
           showtip(el.attr('title'))
         });
 
-        el.addEventListener('pause', function() {
+        el.addEventListener('pause', function () {
           t.removeClass('playing');
           t.media.list.removeClass('playing');
         });
 
-        el.addEventListener('timeupdate', function() {
+        el.addEventListener('timeupdate', function () {
           var percent = Math.floor((el.currentTime / el.duration * 100));
           t.media.progress.width(percent + '%');
-          if(t.media.lrc) {
+          if (t.media.lrc) {
             t.media.scrollLrc(el.currentTime)
           }
           if (percent == 100) { // 下一曲
@@ -547,34 +547,34 @@ const mediaPlayer = function(config) {
         t.media.source = el;
       }
     },
-    info: function() {
-      if(!t.media.list) {
+    info: function () {
+      if (!t.media.list) {
         var el = document.createElement('div');
         el.addClass('play-list');
         el.innerHTML = '<div class="preview"></div><ol></ol>';
         t.media.list = el;
         t.insertAfter(el);
 
-        $('#main').addEventListener('click', function() {
+        $('#main').addEventListener('click', function () {
           t.media.hideList()
         })
       }
     },
-    list: function() {
+    list: function () {
       var list = t.media.list.child("ol");
       list.innerHTML = "";
-      t.media.playlist.forEach(function(item, index) {
+      t.media.playlist.forEach(function (item, index) {
         var el = document.createElement('li');
-        el.innerHTML = '<span class="info"><span>'+item.title+'</span><span>'+item.author+'</span></span>';
+        el.innerHTML = '<span class="info"><span>' + item.title + '</span><span>' + item.author + '</span></span>';
         el.title = item.title + ' - ' + item.author
 
-        el.addEventListener('click', function(event) {
+        el.addEventListener('click', function (event) {
           var current = event.currentTarget;
-          if(t.media.pointer === index && t.media.progress) {
-            if(t.media.source.paused) {
+          if (t.media.pointer === index && t.media.progress) {
+            if (t.media.source.paused) {
               t.media.play();
             } else {
-              t.media.source.currentTime = t.media.source.duration * Math.floor((event.clientX - current.left()))/current.width();
+              t.media.source.currentTime = t.media.source.duration * Math.floor((event.clientX - current.left())) / current.width();
             }
             return;
           }
@@ -585,14 +585,14 @@ const mediaPlayer = function(config) {
         list.appendChild(el);
       })
     },
-    progress: function() {
-      if(t.media.progress) {
+    progress: function () {
+      if (t.media.progress) {
         t.media.progress.parentNode.removeClass('current');
         t.media.progress.remove();
       }
 
       var current = t.media.list.find('li')[t.media.pointer];
-      if(current) {
+      if (current) {
         var progress = document.createElement('div');
         progress.addClass('progress')
         current.appendChild(progress);
@@ -602,24 +602,24 @@ const mediaPlayer = function(config) {
         t.media.scroll()
       }
     },
-    preview: function() {
+    preview: function () {
       var preview = t.media.list.child('.preview')
       var current = t.media.playlist[t.media.pointer]
-      preview.innerHTML = '<div class="cover"><div class="disc"><img src="'+(current.pic)+'" class="blur" /></div></div>'
-      + '<div class="info"><h4 class="title">'+current.title+'</h4><span>'+current.author+'</span><div class="lrc"></div></div>'
+      preview.innerHTML = '<div class="cover"><div class="disc"><img src="' + (current.pic) + '" class="blur" /></div></div>'
+        + '<div class="info"><h4 class="title">' + current.title + '</h4><span>' + current.author + '</span><div class="lrc"></div></div>'
 
       var lrc = '';
       fetch(current.lrc)
-        .then(function(response) {
+        .then(function (response) {
           return response.text()
-        }).then(function(body) {
-          if(current !== t.media.playlist[t.media.pointer])
+        }).then(function (body) {
+          if (current !== t.media.playlist[t.media.pointer])
             return;
 
           t.media.lrc.data = utils.lrc(body)
           var result = ''
-          t.media.lrc.data.forEach(function(line, index) {
-            lrc += '<p'+(index===0?' class="current"':'')+'>'+line[1]+'</p>';
+          t.media.lrc.data.forEach(function (line, index) {
+            lrc += '<p' + (index === 0 ? ' class="current"' : '') + '>' + line[1] + '</p>';
           })
 
           var el = document.createElement('div');
@@ -629,25 +629,25 @@ const mediaPlayer = function(config) {
           preview.child('.lrc').appendChild(el);
           t.media.lrc.el = el;
           t.media.lrc.index = 0;
-        }).catch(function(ex) {})
+        }).catch(function (ex) { })
 
       preview.child('.cover').addEventListener('click', t.media.options.events['play-pause'])
     }
   },
-  init = function(config) {
-    if(t.media.created)
-      return;
+    init = function (config) {
+      if (t.media.created)
+        return;
 
-    t.media.options = Object.assign(option, config);
-    // 初始化button以及click事件
-    t.media.options.btns.forEach(create.button);
-    // 初始化audio
-    create[t.media.options.type]();
-    // 初始化播放列表等
-    create.info();
+      t.media.options = Object.assign(option, config);
+      // 初始化button以及click事件
+      t.media.options.btns.forEach(create.button);
+      // 初始化audio
+      create[t.media.options.type]();
+      // 初始化播放列表等
+      create.info();
 
-    t.media.created = true;
-  }
+      t.media.created = true;
+    }
 
   init(config);
 }
@@ -679,20 +679,20 @@ var LOCAL_HASH = 0;
 const Loader = {
   timer: null,
   lock: false,
-  show: function() {
+  show: function () {
     clearTimeout(this.timer);
     document.body.removeClass('loaded');
     Velocity(loadCat, "fadeIn", {
-      complete: function() {
+      complete: function () {
         Loader.lock = false;
       }
     });
   },
-  hide: function(sec) {
-    this.timer = setTimeout(this.vanish, sec||3000);
+  hide: function (sec) {
+    this.timer = setTimeout(this.vanish, sec || 3000);
   },
-  vanish: function() {
-    if(Loader.lock)
+  vanish: function () {
+    if (Loader.lock)
       return;
     Velocity(loadCat, "fadeOut");
     document.body.addClass('loaded');
@@ -700,9 +700,9 @@ const Loader = {
   }
 }
 
-const changeTheme = function(type) {
+const changeTheme = function (type) {
   var btn = $('.theme .ic')
-  if(type) {
+  if (type) {
     HTML.attr('data-theme', type);
     btn.removeClass('i-sun')
     btn.addClass('i-moon')
@@ -713,16 +713,16 @@ const changeTheme = function(type) {
   }
 }
 
-const changeMetaTheme = function(color) {
-  if(HTML.attr('data-theme') == 'dark')
+const changeMetaTheme = function (color) {
+  if (HTML.attr('data-theme') == 'dark')
     color = '#222'
 
   $('meta[name="theme-color"]').attr('content', color);
 }
 
 const themeColorListener = function () {
-  window.matchMedia('(prefers-color-scheme: dark)').addListener(function(mediaQueryList) {
-    if(mediaQueryList.matches){
+  window.matchMedia('(prefers-color-scheme: dark)').addListener(function (mediaQueryList) {
+    if (mediaQueryList.matches) {
       changeTheme('dark');
     } else {
       changeTheme();
@@ -730,11 +730,11 @@ const themeColorListener = function () {
   });
 
   var t = store.get('theme');
-  if(t) {
+  if (t) {
     changeTheme(t);
   }
 
-  $('.theme').addEventListener('click', function(event) {
+  $('.theme').addEventListener('click', function (event) {
     var btn = event.currentTarget.child('.ic')
 
     var neko = BODY.createChild('div', {
@@ -742,19 +742,19 @@ const themeColorListener = function () {
       innerHTML: '<div class="planet"><div class="sun"></div><div class="moon"></div></div><div class="body"><div class="face"><section class="eyes left"><span class="pupil"></span></section><section class="eyes right"><span class="pupil"></span></section><span class="nose"></span></div></div>'
     });
 
-    var hideNeko = function() {
-      setTimeout(function() {
+    var hideNeko = function () {
+      setTimeout(function () {
         Velocity(neko, "fadeOut", {
-          complete: function() {
+          complete: function () {
             BODY.removeChild(neko)
           }
         });
       }, 2500);
     }
 
-    if(btn.hasClass('i-sun')) {
+    if (btn.hasClass('i-sun')) {
       Velocity(neko, "fadeIn", {
-        complete: function() {
+        complete: function () {
           neko.addClass('dark');
           changeTheme('dark');
           store.set('theme', 'dark');
@@ -764,7 +764,7 @@ const themeColorListener = function () {
     } else {
       neko.addClass('dark');
       Velocity(neko, "fadeIn", {
-        complete: function() {
+        complete: function () {
           neko.removeClass('dark');
           changeTheme();
           store.del('theme');
@@ -776,14 +776,14 @@ const themeColorListener = function () {
 }
 
 const visibilityListener = function () {
-  document.addEventListener('visibilitychange', function() {
-    switch(document.visibilityState) {
+  document.addEventListener('visibilitychange', function () {
+    switch (document.visibilityState) {
       case 'hidden':
         $('[rel="icon"]').attr('href', statics + CONFIG.favicon.hidden);
         document.title = LOCAL.favicon.hide;
         Loader.show()
         clearTimeout(titleTime);
-      break;
+        break;
       case 'visible':
         $('[rel="icon"]').attr('href', statics + CONFIG.favicon.normal);
         document.title = LOCAL.favicon.show;
@@ -791,13 +791,13 @@ const visibilityListener = function () {
         titleTime = setTimeout(function () {
           document.title = originTitle;
         }, 2000);
-      break;
+        break;
     }
   });
 }
 
-const showtip = function(msg) {
-  if(!msg)
+const showtip = function (msg) {
+  if (!msg)
     return
 
   var tipbox = BODY.createChild('div', {
@@ -805,9 +805,9 @@ const showtip = function(msg) {
     className: 'tip'
   });
 
-  setTimeout(function() {
+  setTimeout(function () {
     tipbox.addClass('hide')
-    setTimeout(function() {
+    setTimeout(function () {
       BODY.removeChild(tipbox);
     }, 300);
   }, 3000);
@@ -872,15 +872,15 @@ const scrollHandle = function (event) {
   $('.percent').width(scrollPercent);
 }
 
-const pagePostion = function(url) {
+const pagePostion = function (url) {
   store.set(url, scrollAction.y)
 }
 
-const postionInit = function() {
+const postionInit = function () {
   var anchor = window.location.hash
-  if(LOCAL_HASH == 0 && anchor) {
+  if (LOCAL_HASH == 0 && anchor) {
     var target = $(decodeURI(anchor))
-    if(target) {
+    if (target) {
       pageScroll(target);
       LOCAL_HASH = 1
     } else {
@@ -888,7 +888,7 @@ const postionInit = function() {
     }
   } else {
     var position = store.get(window.location.href)
-    if(position) {
+    if (position) {
       pageScroll(BODY, position);
       store.del(window.location.href);
     }
@@ -896,7 +896,7 @@ const postionInit = function() {
   }
 }
 
-const clipBoard = function(str, callback) {
+const clipBoard = function (str, callback) {
   var ta = BODY.createChild('textarea', {
     style: {
       top: window.scrollY + 'px', // Prevent page scrolling
@@ -926,7 +926,7 @@ const loadRecentComment = function (pjax) {
   var options = CONFIG.valine
   var el = $('#rcomment')
 
-  if(!options.appId || !el)
+  if (!options.appId || !el)
     return;
 
   // set serverURLs
@@ -938,7 +938,7 @@ const loadRecentComment = function (pjax) {
       case '-9Nh9j0Va':
         prefix += 'tab.leancloud.cn';
         break;
-        // US
+      // US
       case '-MdYXbMMI':
         prefix += 'us.avoscloud.com';
         break
@@ -957,17 +957,17 @@ const loadRecentComment = function (pjax) {
 
     AV.Query.doCloudQuery(
       "select nick, mail, comment, url from Comment where (rid='' or rid is not exists) order by -createdAt limit 0,10"
-    ).then(function(rets){
+    ).then(function (rets) {
       rets = (rets && rets.results) || []
       const len = rets.length
       if (len) {
         var html = ''
         for (var i = 0; i < len; i++) {
           html += '<li class="item">'
-          +'<a href="'+ CONFIG.root + rets[i].get('url') +'#'+rets[i].id+'">'
-          + '<span class="breadcrumb">'+rets[i].get('nick') + ' @ '+ dateFormat(rets[i].createdAt)+'</span>'
-          + '<span>'+rets[i].get('comment').replace(/<[^>]+>/gi, '').substr(0, 100)+'</span></a>'
-          +'</li>'
+            + '<a href="' + CONFIG.root + rets[i].get('url') + '#' + rets[i].id + '">'
+            + '<span class="breadcrumb">' + rets[i].get('nick') + ' @ ' + dateFormat(rets[i].createdAt) + '</span>'
+            + '<span>' + rets[i].get('comment').replace(/<[^>]+>/gi, '').substr(0, 100) + '</span></a>'
+            + '</li>'
         }
 
         el.createChild('ul', {
@@ -976,16 +976,16 @@ const loadRecentComment = function (pjax) {
 
         pjax.refresh(el);
       }
-    }).catch(function(e){})
-  } catch (e) {}
+    }).catch(function (e) { })
+  } catch (e) { }
 }
 const sideBarToggleHandle = function (event, force) {
-  if(sideBar.hasClass('on')) {
+  if (sideBar.hasClass('on')) {
     sideBar.removeClass('on');
     menuToggle.removeClass('close');
-    Velocity(sideBar, 'transition.slideRightOut', {duration: 200});
+    Velocity(sideBar, 'transition.slideRightOut', { duration: 200 });
   } else {
-    if(force)
+    if (force)
       return
 
     Velocity(sideBar, 'transition.slideRightIn', {
@@ -1002,7 +1002,7 @@ const sideBarTab = function () {
   var sideBarInner = sideBar.child('.inner');
   var panels = sideBar.find('.panel');
 
-  if(sideBar.child('.tab')) {
+  if (sideBar.child('.tab')) {
     sideBarInner.removeChild(sideBar.child('.tab'));
   }
 
@@ -1012,14 +1012,14 @@ const sideBarTab = function () {
   ['contents', 'related', 'overview'].forEach(function (item) {
     var element = sideBar.child('.panel.' + item)
 
-    if(element.innerHTML.replace(/(^\s*)|(\s*$)/g, "").length < 1) {
-      if(item == 'contents') {
+    if (element.innerHTML.replace(/(^\s*)|(\s*$)/g, "").length < 1) {
+      if (item == 'contents') {
         showContents.display("none")
       }
       return;
     }
 
-    if(item == 'contents') {
+    if (item == 'contents') {
       showContents.display("")
     }
 
@@ -1030,7 +1030,7 @@ const sideBarTab = function () {
     tab.appendChild(span);
     tab.addClass(item + ' item');
 
-    if(active) {
+    if (active) {
       element.addClass(active);
       tab.addClass(active);
     } else {
@@ -1081,7 +1081,7 @@ const sidebarTOC = function () {
   sections = sections.map(function (element, index) {
     var link = element.child('a.toc-link');
     var anchor = $(decodeURI(link.attr('href')));
-    if(!anchor)
+    if (!anchor)
       return
     var alink = anchor.child('a.anchor');
 
@@ -1090,15 +1090,15 @@ const sidebarTOC = function () {
       var target = $(decodeURI(event.currentTarget.attr('href')));
 
       activeLock = index;
-      pageScroll(target, -siteNavHeight, function() {
-          activateNavByIndex(index)
-          activeLock = null
-        })
+      pageScroll(target, -siteNavHeight, function () {
+        activateNavByIndex(index)
+        activeLock = null
+      })
     };
 
     // TOC item animation navigate.
     link.addEventListener('click', anchorScroll);
-    alink && alink.addEventListener('click', function(event) {
+    alink && alink.addEventListener('click', function (event) {
       anchorScroll(event)
       clipBoard(LOCAL.path + event.currentTarget.attr('href'))
     });
@@ -1134,7 +1134,7 @@ const sidebarTOC = function () {
       if (parent.matches('li')) {
         parent.addClass('active');
         var t = $(parent.child('a.toc-link').attr('href'))
-        if(t) {
+        if (t) {
           t.addClass('active');
         }
       }
@@ -1147,7 +1147,7 @@ const sidebarTOC = function () {
     });
   }
 
-  var findIndex = function(entries) {
+  var findIndex = function (entries) {
     var index = 0;
     var entry = entries[index];
 
@@ -1165,10 +1165,10 @@ const sidebarTOC = function () {
     return sections.indexOf(entry.target);
   }
 
-  var createIntersectionObserver = function() {
+  var createIntersectionObserver = function () {
     var observer = new IntersectionObserver(function (entries, observe) {
-      var index = findIndex(entries) + (diffY < 0? 1 : 0);
-      if(activeLock === null) {
+      var index = findIndex(entries) + (diffY < 0 ? 1 : 0);
+      if (activeLock === null) {
         activateNavByIndex(index);
       }
     }, {
@@ -1208,50 +1208,50 @@ const menuActive = function () {
     element.parentNode.parentNode.toggleClass('expand', element.parentNode.hasClass('submenu') && element.parentNode.child('.active'));
   });
 }
-const cardActive = function() {
-  if(!$('.index.wrap'))
+const cardActive = function () {
+  if (!$('.index.wrap'))
     return
 
-  var io = new IntersectionObserver(function(entries) {
-      entries.forEach(function(article) {
-        if (!window.IntersectionObserver) {
-          if( article.target.hasClass("show") === false){
-              article.target.addClass("show");
-          }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (article) {
+      if (!window.IntersectionObserver) {
+        if (article.target.hasClass("show") === false) {
+          article.target.addClass("show");
+        }
+      } else {
+        if (article.target.hasClass("show")) {
+          io.unobserve(article.target)
         } else {
-          if (article.target.hasClass("show")) {
-            io.unobserve(article.target)
-          } else {
-            if (article.isIntersecting) {
-              article.target.addClass("show");
-              io.unobserve(article.target);
-            }
+          if (article.isIntersecting) {
+            article.target.addClass("show");
+            io.unobserve(article.target);
           }
         }
-      })
+      }
+    })
   }, {
-      root: null,
-      threshold: [0.3]
+    root: null,
+    threshold: [0.3]
   });
 
-  $.each('.index.wrap article.item, .index.wrap section.item', function(article) {
-      io.observe(article)
+  $.each('.index.wrap article.item, .index.wrap section.item', function (article) {
+    io.observe(article)
   })
 
   $('.index.wrap .item:first-child').addClass("show")
   // var tabs;
 
-  $.each('.cards .item', function(element, index) {
-    ['mouseenter', 'touchstart'].forEach(function(item){
-      element.addEventListener(item, function(event) {
-        if($('.cards .item.active')) {
+  $.each('.cards .item', function (element, index) {
+    ['mouseenter', 'touchstart'].forEach(function (item) {
+      element.addEventListener(item, function (event) {
+        if ($('.cards .item.active')) {
           $('.cards .item.active').removeClass('active')
         }
         element.addClass('active')
       })
     });
-    ['mouseleave'].forEach(function(item){
-      element.addEventListener(item, function(event) {
+    ['mouseleave'].forEach(function (item) {
+      element.addEventListener(item, function (event) {
         element.removeClass('active')
       })
     });
@@ -1282,36 +1282,36 @@ const cardActive = function() {
   });
 }
 
-const registerExtURL = function() {
-  $.each('span.exturl', function(element) {
-      var link = document.createElement('a');
-      // https://stackoverflow.com/questions/30106476/using-javascripts-atob-to-decode-base64-doesnt-properly-decode-utf-8-strings
-      link.href = decodeURIComponent(atob(element.dataset.url).split('').map(function(c) {
-        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-      }).join(''));
-      link.rel = 'noopener external nofollow noreferrer';
-      link.target = '_blank';
-      link.className = element.className;
-      link.title = element.title || element.innerText;
-      link.innerHTML = element.innerHTML;
-      if(element.dataset.backgroundImage) {
-        link.dataset.backgroundImage = element.dataset.backgroundImage;
-      }
-      element.parentNode.replaceChild(link, element);
-    });
+const registerExtURL = function () {
+  $.each('span.exturl', function (element) {
+    var link = document.createElement('a');
+    // https://stackoverflow.com/questions/30106476/using-javascripts-atob-to-decode-base64-doesnt-properly-decode-utf-8-strings
+    link.href = decodeURIComponent(atob(element.dataset.url).split('').map(function (c) {
+      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+    link.rel = 'noopener external nofollow noreferrer';
+    link.target = '_blank';
+    link.className = element.className;
+    link.title = element.title || element.innerText;
+    link.innerHTML = element.innerHTML;
+    if (element.dataset.backgroundImage) {
+      link.dataset.backgroundImage = element.dataset.backgroundImage;
+    }
+    element.parentNode.replaceChild(link, element);
+  });
 }
 
 const postBeauty = function () {
   loadComments();
 
-  if(!$('.md'))
+  if (!$('.md'))
     return
 
-  $('.post.block').oncopy = function(event) {
+  $('.post.block').oncopy = function (event) {
     showtip(LOCAL.copyright)
 
     var copyright = $('#copyright')
-    if(window.getSelection().toString().length > 30 && copyright) {
+    if (window.getSelection().toString().length > 30 && copyright) {
       event.preventDefault();
       var author = "# " + copyright.child('.author').innerText
       var link = "# " + copyright.child('.link').innerText
@@ -1319,17 +1319,17 @@ const postBeauty = function () {
       var htmlData = author + "<br>" + link + "<br>" + license + "<br><br>" + window.getSelection().toString().replace(/\r\n/g, "<br>");;
       var textData = author + "\n" + link + "\n" + license + "\n\n" + window.getSelection().toString().replace(/\r\n/g, "\n");
       if (event.clipboardData) {
-          event.clipboardData.setData("text/html", htmlData);
-          event.clipboardData.setData("text/plain", textData);
+        event.clipboardData.setData("text/html", htmlData);
+        event.clipboardData.setData("text/plain", textData);
       } else if (window.clipboardData) {
-          return window.clipboardData.setData("text", textData);
+        return window.clipboardData.setData("text", textData);
       }
     }
   }
 
-  $.each('.md img', function(element) {
+  $.each('.md img', function (element) {
     var info;
-    if(info = element.attr('title')) {
+    if (info = element.attr('title')) {
       var para = document.createElement('span');
       var txt = document.createTextNode(info);
       para.appendChild(txt);
@@ -1337,18 +1337,18 @@ const postBeauty = function () {
       element.insertAfter(para);
     }
   });
-  if($('.md :not(a) > img, .md > img')) {
+  if ($('.md :not(a) > img, .md > img')) {
     LOCAL['mediumzoom'] = true;
-    vendorJs('mediumzoom', function() {
-        window.mediumZoom('.md :not(a) > img, .md > img', {
-          background: 'rgba(0, 0, 0, 0.6)'
-        });
-      }, window.mediumZoom);
+    vendorJs('mediumzoom', function () {
+      window.mediumZoom('.md :not(a) > img, .md > img', {
+        background: 'rgba(0, 0, 0, 0.6)'
+      });
+    }, window.mediumZoom);
   }
 
-  $.each('li ruby', function(element) {
+  $.each('li ruby', function (element) {
     var parent = element.parentNode;
-    if(element.parentNode.tagName != 'LI') {
+    if (element.parentNode.tagName != 'LI') {
       parent = element.parentNode.parentNode;
     }
     parent.addClass('ruby');
@@ -1375,12 +1375,12 @@ const postBeauty = function () {
     copyBtn.addEventListener('click', function (event) {
       var target = event.currentTarget;
       var comma = '', code = '';
-      code_container.find('pre').forEach(function(line) {
+      code_container.find('pre').forEach(function (line) {
         code += comma + line.innerText;
         comma = '\n'
       })
 
-      clipBoard(code, function(result) {
+      clipBoard(code, function (result) {
         target.child('.ic').className = result ? 'ic i-check' : 'ic i-times';
         target.blur();
         showtip(LOCAL.copyright);
@@ -1405,13 +1405,13 @@ const postBeauty = function () {
     });
 
     var fullscreenBtn = element.child('.fullscreen-btn');
-    var removeFullscreen = function() {
+    var removeFullscreen = function () {
       element.removeClass('fullscreen');
       element.scrollTop = 0;
       BODY.removeClass('fullscreen');
       fullscreenBtn.child('.ic').className = 'ic i-expand';
     }
-    var fullscreenHandle = function(event) {
+    var fullscreenHandle = function (event) {
       var target = event.currentTarget;
       if (element.hasClass('fullscreen')) {
         removeFullscreen();
@@ -1427,23 +1427,23 @@ const postBeauty = function () {
     fullscreenBtn.addEventListener('click', fullscreenHandle);
     caption && caption.addEventListener('click', fullscreenHandle);
 
-    if(code_container && code_container.height() > 300) {
+    if (code_container && code_container.height() > 300) {
       code_container.style.maxHeight = "300px";
       code_container.insertAdjacentHTML('beforeend', '<div class="show-btn"><i class="ic i-angle-down"></i></div>');
       var showBtn = code_container.child('.show-btn');
       var showBtnIcon = showBtn.child('i');
 
-      var showCode = function() {
+      var showCode = function () {
         code_container.style.maxHeight = ""
         showBtn.addClass('open')
       }
 
-      var hideCode = function() {
+      var hideCode = function () {
         code_container.style.maxHeight = "300px"
         showBtn.removeClass('open')
       }
 
-      showBtn.addEventListener('click', function(event) {
+      showBtn.addEventListener('click', function (event) {
         if (showBtn.hasClass('open')) {
           removeFullscreen()
           hideCode()
@@ -1463,10 +1463,10 @@ const postBeauty = function () {
     element.addEventListener('click', function (event) {
       event.preventDefault();
       var qr = $('#qr')
-      if(qr.display() === 'inline-flex') {
+      if (qr.display() === 'inline-flex') {
         Velocity(qr, "fadeOut");
       } else {
-        Velocity(qr, "transition.slideUpBigIn", {display: 'inline-flex'});
+        Velocity(qr, "transition.slideUpBigIn", { display: 'inline-flex' });
       }
     });
   });
@@ -1491,18 +1491,18 @@ const postBeauty = function () {
 
   // tab
   var first_tab
-  $.each('div.tab', function(element, index) {
+  $.each('div.tab', function (element, index) {
     var id = element.attr('data-id');
     var title = element.attr('data-title');
     var box = $('#' + id);
-    if(!box) {
+    if (!box) {
       box = document.createElement('div');
       box.className = 'tabs';
       box.id = id;
       box.innerHTML = '<div class="show-btn"></div>'
 
       var showBtn = box.child('.show-btn');
-      showBtn.addEventListener('click', function(event) {
+      showBtn.addEventListener('click', function (event) {
         pageScroll(box)
       });
 
@@ -1513,7 +1513,7 @@ const postBeauty = function () {
     }
 
     var ul = box.child('.nav');
-    if(!ul) {
+    if (!ul) {
       ul = box.createChild('ul', {
         className: 'nav'
       });
@@ -1523,14 +1523,14 @@ const postBeauty = function () {
       innerHTML: title
     });
 
-    if(first_tab) {
+    if (first_tab) {
       li.addClass('active');
       element.addClass('active');
     }
 
-    li.addEventListener('click', function(event) {
+    li.addEventListener('click', function (event) {
       var target = event.currentTarget;
-      box.find('.active').forEach(function(el) {
+      box.find('.active').forEach(function (el) {
         el.removeClass('active');
       })
       element.addClass('active');
@@ -1540,7 +1540,7 @@ const postBeauty = function () {
     box.appendChild(element);
   });
 
-  $.each('div.tags a', function(element) {
+  $.each('div.tags a', function (element) {
     element.className = ['primary', 'success', 'info', 'warning', 'danger'][Math.floor(Math.random() * 5)]
   })
 }
@@ -1552,7 +1552,7 @@ const loadComments = function () {
     return;
   } else {
     goToComment.display("")
-    vendorJs('valine', function() {
+    vendorJs('valine', function () {
       var options = CONFIG.valine;
       options.el = '#comments';
       options.path = element.attr('data-id');
@@ -1563,7 +1563,7 @@ const loadComments = function () {
     }, window.Valine);
   }
 
-  var io = new IntersectionObserver(function(entries, observer) {
+  var io = new IntersectionObserver(function (entries, observer) {
     var entry = entries[0];
     vendorCss('valine');
     if (entry.isIntersecting) {
@@ -1575,11 +1575,11 @@ const loadComments = function () {
   io.observe(element);
 }
 
-const algoliaSearch = function(pjax) {
-  if(CONFIG.search === null)
+const algoliaSearch = function (pjax) {
+  if (CONFIG.search === null)
     return
 
-  if(!siteSearch) {
+  if (!siteSearch) {
     siteSearch = BODY.createChild('div', {
       id: 'search',
       innerHTML: '<div class="inner"><div class="header"><span class="icon"><i class="ic i-search"></i></span><div class="search-input-container"></div><span class="close-btn"><i class="ic i-times-circle"></i></span></div><div class="results"><div class="inner"><div id="search-stats"></div><div id="search-hits"></div><div id="search-pagination"></div></div></div></div>'
@@ -1588,8 +1588,8 @@ const algoliaSearch = function(pjax) {
 
   var search = instantsearch({
     indexName: CONFIG.search.indexName,
-    searchClient  : algoliasearch(CONFIG.search.appID, CONFIG.search.apiKey),
-    searchFunction: function(helper) {
+    searchClient: algoliasearch(CONFIG.search.appID, CONFIG.search.apiKey),
+    searchFunction: function (helper) {
       var searchInput = $('.search-input');
       if (searchInput.value) {
         helper.search();
@@ -1597,7 +1597,7 @@ const algoliaSearch = function(pjax) {
     }
   });
 
-  search.on('render', function() {
+  search.on('render', function () {
     pjax.refresh($('#search-hits'));
   });
 
@@ -1608,13 +1608,13 @@ const algoliaSearch = function(pjax) {
     }),
 
     instantsearch.widgets.searchBox({
-      container           : '.search-input-container',
-      placeholder         : LOCAL.search.placeholder,
+      container: '.search-input-container',
+      placeholder: LOCAL.search.placeholder,
       // Hide default icons of algolia search
-      showReset           : false,
-      showSubmit          : false,
+      showReset: false,
+      showSubmit: false,
       showLoadingIndicator: false,
-      cssClasses          : {
+      cssClasses: {
         input: 'search-input'
       }
     }),
@@ -1622,7 +1622,7 @@ const algoliaSearch = function(pjax) {
     instantsearch.widgets.stats({
       container: '#search-stats',
       templates: {
-        text: function(data) {
+        text: function (data) {
           var stats = LOCAL.search.stats
             .replace(/\$\{hits}/, data.nbHits)
             .replace(/\$\{time}/, data.processingTimeMS);
@@ -1634,13 +1634,13 @@ const algoliaSearch = function(pjax) {
     instantsearch.widgets.hits({
       container: '#search-hits',
       templates: {
-        item: function(data) {
-          var cats = data.categories ? '<span>'+data.categories.join('<i class="ic i-angle-right"></i>')+'</span>' : '';
-          return '<a href="' + CONFIG.root + data.path +'">'+cats+data._highlightResult.title.value+'</a>';
+        item: function (data) {
+          var cats = data.categories ? '<span>' + data.categories.join('<i class="ic i-angle-right"></i>') + '</span>' : '';
+          return '<a href="' + CONFIG.root + data.path + '">' + cats + data._highlightResult.title.value + '</a>';
         },
-        empty: function(data) {
-          return '<div id="hits-empty">'+
-              LOCAL.search.empty.replace(/\$\{query}/, data.query) +
+        empty: function (data) {
+          return '<div id="hits-empty">' +
+            LOCAL.search.empty.replace(/\$\{query}/, data.query) +
             '</div>';
         }
       },
@@ -1651,19 +1651,19 @@ const algoliaSearch = function(pjax) {
 
     instantsearch.widgets.pagination({
       container: '#search-pagination',
-      scrollTo : false,
+      scrollTo: false,
       showFirst: false,
-      showLast : false,
+      showLast: false,
       templates: {
-        first   : '<i class="ic i-angle-double-left"></i>',
-        last    : '<i class="ic i-angle-double-right"></i>',
+        first: '<i class="ic i-angle-double-left"></i>',
+        last: '<i class="ic i-angle-double-right"></i>',
         previous: '<i class="ic i-angle-left"></i>',
-        next    : '<i class="ic i-angle-right"></i>'
+        next: '<i class="ic i-angle-right"></i>'
       },
       cssClasses: {
-        root        : 'pagination',
-        item        : 'pagination-item',
-        link        : 'page-number',
+        root: 'pagination',
+        item: 'pagination-item',
+        link: 'page-number',
         selectedItem: 'current',
         disabledItem: 'disabled-item'
       }
@@ -1673,12 +1673,12 @@ const algoliaSearch = function(pjax) {
   search.start();
 
   // Handle and trigger popup window
-  $.each('.search', function(element) {
-    element.addEventListener('click', function() {
+  $.each('.search', function (element) {
+    element.addEventListener('click', function () {
       document.body.style.overflow = 'hidden';
       Velocity(siteSearch, "transition.shrinkIn", {
         duration: 200,
-        complete: function() {
+        complete: function () {
           $('.search-input').focus();
         }
       });
@@ -1686,26 +1686,26 @@ const algoliaSearch = function(pjax) {
   });
 
   // Monitor main search box
-  const onPopupClose = function() {
+  const onPopupClose = function () {
     document.body.style.overflow = '';
     Velocity(siteSearch, "transition.shrinkOut");
   };
 
-  siteSearch.addEventListener('click', function(event) {
+  siteSearch.addEventListener('click', function (event) {
     if (event.target === siteSearch) {
       onPopupClose();
     }
   });
   $('.close-btn').addEventListener('click', onPopupClose);
   window.addEventListener('pjax:success', onPopupClose);
-  window.addEventListener('keyup', function(event) {
+  window.addEventListener('keyup', function (event) {
     if (event.key === 'Escape') {
       onPopupClose();
     }
   });
 }
-const domInit = function() {
-  $.each('.overview .menu > .item', function(el) {
+const domInit = function () {
+  $.each('.overview .menu > .item', function (el) {
     siteNav.child('.menu').appendChild(el.cloneNode(true));
   })
 
@@ -1716,7 +1716,7 @@ const domInit = function() {
   quickBtn.child('.down').addEventListener('click', goToBottomHandle);
   quickBtn.child('.up').addEventListener('click', backToTopHandle);
 
-  if(!toolBtn) {
+  if (!toolBtn) {
     toolBtn = siteHeader.createChild('div', {
       id: 'tool',
       innerHTML: '<div class="item player"></div><div class="item contents"><i class="ic i-list-ol"></i></div><div class="item chat"><i class="ic i-comments"></i></div><div class="item back-to-top"><i class="ic i-arrow-up"></i><span>0%</span></div>'
@@ -1739,7 +1739,7 @@ const domInit = function() {
 const pjaxReload = function () {
   pagePostion(window.location.href);
 
-  if(sideBar.hasClass('on')) {
+  if (sideBar.hasClass('on')) {
     Velocity(sideBar, 'transition.slideRightOut', {
       duration: 200,
       complete: function () {
@@ -1760,7 +1760,7 @@ const siteRefresh = function (reload) {
   vendorCss('mermaid');
   vendorJs('chart');
 
-  if(!reload) {
+  if (!reload) {
     $.each('script[data-pjax]', pjaxScript);
   }
 
@@ -1779,9 +1779,9 @@ const siteRefresh = function (reload) {
   toolPlayer.media.load(LOCAL.audio || CONFIG.audio || {})
 
   lozad($.all('img, [data-background-image]'), {
-      loaded: function(el) {
-          el.addClass('lozaded');
-      }
+    loaded: function (el) {
+      el.addClass('lozaded');
+    }
   }).observe()
 
   Loader.hide()
@@ -1823,7 +1823,7 @@ const siteInit = function () {
 
   window.addEventListener('pjax:success', siteRefresh)
 
-  window.addEventListener("beforeunload", function() {
+  window.addEventListener("beforeunload", function () {
     pagePostion(window.location.href)
   })
 
