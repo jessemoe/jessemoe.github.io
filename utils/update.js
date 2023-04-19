@@ -27,4 +27,4 @@ function replaceInFiles(directory, searchString, replaceString) {
   }
 }
 
-replaceInFiles(directory, 'style.css', 'app.css');
+replaceInFiles(directory, 'app.css', 'css-style/app.css');
