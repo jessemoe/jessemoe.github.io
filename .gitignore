@@ -3,7 +3,6 @@
 /.next/
 /out/
 /build
-/_site
 *.tsbuildinfo
 next-env.d.ts
 .vercel
@@ -11,7 +10,7 @@ npm-debug.log*
 .vscode
 
 # jekyll
-./jekyll-cache
+/_site
 
 # misc
 .DS_Store
