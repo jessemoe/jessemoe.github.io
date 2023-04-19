@@ -10,6 +10,9 @@ next-env.d.ts
 npm-debug.log*
 .vscode
 
+# jekyll
+./jekyll-cache
+
 # misc
 .DS_Store
 *.pem
