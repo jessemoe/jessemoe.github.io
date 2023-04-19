@@ -1,7 +1,11 @@
 ---
-title: WARP 教程（一）
-tags: proxy
-categories: proxy
+layout: post
+title: warp-config
+date: 2023-04-18
+Author: Stark 
+tags: [proxy]
+comments: true
+toc: true
 ---
 
 1) 添加完源后，安装 Cloudflare WARP 客户端：
