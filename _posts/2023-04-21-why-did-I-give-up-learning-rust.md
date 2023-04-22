@@ -8,7 +8,7 @@ comments: true
 toc: true
 ---
 
-As a former Haskeller, let me share my feelings about Rust. Language is very powerful, but the reason why I am not interested in this language is:
+As a former Haskeller, let me share my feelings about Rust. Rust Language is very powerful, but the reason why I am not interested in this language is:
 1. There are many business logic in the world that require creativity and programming flow experience, and the Rust compiler always interrupts your directional thinking,
 forcing you to focus on unimportant details during the design phase, losing a lot of programming fun.
 
