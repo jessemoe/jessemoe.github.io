@@ -7,7 +7,7 @@ url: starkbtc.github.io
 
 # 如果你的博客的URL是：(http://yourusername.github.io/repository-name)
 # 那么就写成 "/repository-name"
-baseurl: starkbtc.github.io
+baseurl:
 
 #
 # Flags below are optional
