@@ -14,7 +14,6 @@ toc: true
 
 在开始之前，你需要创建一个新的 React 或纯 HTML 页面，并在其中添加 ECharts 的引用。你可以通过 npm 或直接下载 ECharts 的脚本文件来引入。
 
-html
 ```
 <!-- 引入 ECharts 脚本 -->
 <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
@@ -23,7 +22,6 @@ html
 
 交易深度图需要正确的数据格式才能正确显示。你需要一个包含买入和卖出订单的数组，每个订单都包含价格和累积数量。例如：
 
-javascript
 ```
 const depthData = [
   { price: 100, bidAmount: 500 },
@@ -40,7 +38,6 @@ const depthData = [
 
 在准备好数据后，我们需要初始化 ECharts 图表，并配置其选项。在本例中，我们将创建一个柱状图和线图组合的图表，以显示买入和卖出订单的深度。
 
-javascript
 ```
 // 获取包含图表的 DOM 元素
 const chartContainer = document.getElementById('depthChart');
@@ -94,7 +91,6 @@ const option = {
 
 现在，我们已经完成了 ECharts 图表的初始化和配置。将以下代码添加到你的 HTML 页面中的图表容器中：
 
-html
 ```
 <div id="depthChart" style="width: 100%; height: 500px;"></div>
 ```
