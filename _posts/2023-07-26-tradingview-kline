@@ -1,3 +1,12 @@
+---
+layout: post
+title: TradingView 绘制交易k线图
+date: 2023-07-26
+Author: Stark 
+tags: [Frontend]
+comments: true
+toc: true
+---
 使用 TradingView 绘制k线图的简易指南
 
 TradingView 是一个流行的金融图表库和社交交易平台，它可以为网站和应用程序提供丰富的交互式金融图表。要在 TradingView 图表上显示自定义的金融数据，可以通过 Datafeed 接口将数据传递给 TradingView。在本篇博客中，我们将介绍如何通过 TradingView Datafeed 接入数据。
