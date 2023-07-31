@@ -11,11 +11,11 @@ toc: true
 
 TradingView 是一个流行的金融图表库，它可以为网站和应用程序提供丰富的交互式金融图表。要在 TradingView 图表上显示自定义的金融数据，可以通过 Datafeed 接口将数据传递给 TradingView。在本篇博客中，我们将介绍如何通过 TradingView Datafeed 接入数据。
 
-步骤 1：选择数据源
+1：选择数据源
 
 首先，我们需要选择用于提供金融数据的数据源。数据源可以是您自己的数据库、第三方金融数据供应商的API，或者任何能够提供金融市场数据的来源。确保您有权使用和传递所选数据源的数据。
 
-步骤 2：创建 Datafeed 服务
+2：创建 Datafeed 服务
 
 接下来，我们需要创建一个 Datafeed 服务，用于从数据源获取实时数据，并将数据传递给 TradingView。Datafeed 服务可以是一个后端服务器，使用您熟悉的任何编程语言（例如 JavaScript、Python、Java 等）来编写。
 
@@ -24,7 +24,7 @@ TradingView 是一个流行的金融图表库，它可以为网站和应用程�
 获取实时的金融市场数据（例如股票价格、货币汇率等）。
 将获取到的数据进行格式化，以满足 TradingView 的数据要求。
 处理 TradingView 发来的历史数据请求，并返回相应的历史数据。
-步骤 3：实现 Datafeed 接口
+3：实现 Datafeed 接口
 
 TradingView 提供了一个标准的 Datafeed 接口，您需要根据接口规范来实现您的 Datafeed 服务。接口规范包含了一系列请求和响应数据的格式要求，以及定义如何处理历史数据和实时数据的方法。
 
@@ -35,7 +35,7 @@ searchSymbols(userInput: string, exchange: string, symbolType: string, onResult:
 resolveSymbol(symbolName: string, onResolve: (symbolInfo: TradingView.LibrarySymbolInfo) => void, onError: (reason: string) => void): 根据符号名称解析符号信息。
 getBars(symbolInfo: TradingView.LibrarySymbolInfo, resolution: string, from: number, to: number, onResult: (bars: TradingView.LibraryBar[], meta: TradingView.LibraryDataMeta) => void, onError: (reason: string) => void): 获取历史数据。
 subscribeBars(symbolInfo: TradingView.LibrarySymbolInfo, resolution: string, onTick: (bar: TradingView.LibraryBar) => void, listenerGUID: string): void: 订阅实时数据。
-步骤 4：配置 TradingView 图表
+4：配置 TradingView 图表
 
 在您的网页或应用程序中加载 TradingView 图表，并将 Datafeed 配置为使用您实现的 Datafeed 服务。在初始化图表时，将 Datafeed 传递给 TradingView 图表对象，以便与您的 Datafeed 服务进行通信。
 
