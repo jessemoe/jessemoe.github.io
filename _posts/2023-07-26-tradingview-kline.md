@@ -39,12 +39,9 @@ subscribeBars(symbolInfo: TradingView.LibrarySymbolInfo, resolution: string, onT
 
 在您的网页或应用程序中加载 TradingView 图表，并将 Datafeed 配置为使用您实现的 Datafeed 服务。在初始化图表时，将 Datafeed 传递给 TradingView 图表对象，以便与您的 Datafeed 服务进行通信。
 
-步骤 5：测试与调试
+5：测试与调试
 
 在配置完成后，您可以在网页或应用程序中查看 TradingView 图表，并通过 Datafeed 接入数据。确保实时数据和历史数据都可以正确地显示在图表上。
 
-结论
 
-通过 TradingView Datafeed 接入数据可以让您在 TradingView 图表上展示自定义的金融数据。通过创建 Datafeed 服务并实现 Datafeed 接口，您可以将实时数据和历史数据传递给 TradingView，并提供更加丰富和个性化的金融图表体验。
-
-请注意，本文提供了一个简要的指南，Datafeed 接入数据的具体实现可能因您的项目需求和技术栈而有所不同。为了更好地理解和使用 TradingView Datafeed，建议查阅 TradingView 官方文档和开发者指南，以获得更深入的指导和技术支持。
+Datafeed 接入数据的具体实现可能因您的项目需求和技术栈而有所不同。为了更好地理解和使用 TradingView Datafeed，建议查阅 TradingView 官方文档和开发者指南，以获得更深入的指导和技术支持。
