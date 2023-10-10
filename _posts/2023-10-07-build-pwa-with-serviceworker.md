@@ -61,3 +61,5 @@ self.addEventListener("install", event => {
    );
 });
 ```
+## Workbox
+Workbox是一个封装好的service worker库
