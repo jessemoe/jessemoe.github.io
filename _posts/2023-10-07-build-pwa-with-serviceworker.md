@@ -66,3 +66,4 @@ self.addEventListener("activate", event => {
 Workbox是一个封装好的service worker库，你可以使用他很方便的构建PWA应用
 
 ## precache VS runtime cache
+precache 和runtime cache是workbox的两种离线缓存方案。precache是通过injectManifest的方式在webpack构建时确定预缓存的文件，runtime cache则是在运行时进行缓存，可通过generateSW的方式进行配置
