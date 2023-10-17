@@ -7,3 +7,7 @@ tags: [web]
 comments: true
 toc: true
 ---
+
+## 初始化
+加载Telegram SDK
+`<script src="https://telegram.org/js/telegram-web-app.js"></script>`
