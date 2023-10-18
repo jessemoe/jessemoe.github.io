@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 程序员健身指南
+title: 新手健身指南
 date: 2023-08-20
 Author: Jesse 
 tags: [gym]
