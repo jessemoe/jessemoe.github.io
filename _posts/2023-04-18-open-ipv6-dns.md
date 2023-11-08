@@ -2,7 +2,7 @@
 layout: post
 title: open-ipv6-dns
 date: 2023-04-18
-Author: Stark 
+Author: Jesse
 tags: [proxy]
 comments: true
 toc: true
