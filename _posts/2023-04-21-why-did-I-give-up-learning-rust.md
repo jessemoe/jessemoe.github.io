@@ -2,7 +2,7 @@
 layout: post
 title: Why did I give up learning Rust
 date: 2023-04-21
-Author: Stark 
+Author: Jesse
 tags: [Rust]
 comments: true
 toc: true
